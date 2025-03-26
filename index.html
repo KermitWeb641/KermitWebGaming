@@ -1,0 +1,3015 @@
+<html w-tid="1"><head w-tid="3"><style>html{min-height:100%}.ctxmenu{position:fixed;border:1px solid #999;padding:2px 0;box-shadow:#aaa 3px 3px 3px;background:#fff;margin:0;z-index:9999;overflow-y:auto;font:15px Verdana, sans-serif;box-sizing:border-box}.ctxmenu li{margin:1px 0;display:block;position:relative;user-select:none}.ctxmenu li.heading{font-weight:bold;margin-left:-5px}.ctxmenu li span{display:block;padding:2px 20px;cursor:default}.ctxmenu li a{color:inherit;text-decoration:none}.ctxmenu li.icon{padding-left:15px}.ctxmenu img.icon{position:absolute;width:18px;left:10px;top:2px}.ctxmenu li.disabled{color:#ccc}.ctxmenu li.divider{border-bottom:1px solid #aaa;margin:5px 0}.ctxmenu li.interactive:hover{background:rgba(0, 0, 0, .1)}.ctxmenu li.submenu::after{content:"";position:absolute;display:block;top:0;bottom:0;right:.4em;margin:auto .1rem auto auto;border-right:1px solid #000;border-top:1px solid #000;transform:rotate(45deg);width:.3rem;height:.3rem}.ctxmenu li.submenu.disabled::after{border-color:#ccc}</style>
+  <base href="" simulated-href="https://example.com/" w-tid="5">
+
+<link rel="stylesheet" href="https://api.websim.ai/fonts.css?v=6c16bfec6d67484a91d58812caca0430c858ba8c">
+<link rel="stylesheet" href="https://api.websim.ai/ctxmenu.css?v=6c16bfec6d67484a91d58812caca0430c858ba8c">
+
+
+
+  <link id="favicon" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOESURBVFhH7ZZtSFNRGMf/d3fvdnc6p246Z9rcfClnY5oNskIrP0SQFEVBIFlBEEQf+lBkL/RCRNaXggyjrLA+FBVUhBYURfYhyIgyrewF0qxMc5rTzb3u7j3nLrd0c5sgCD/0h8Pd89zz8j/Pec7ZuXSxJ5hX2GLO8BbkT0L/wBCK8wz47ddARIpAFEWQC0UQCAU4cuIs5s6qwunL11BXtYCSIwh4AyBUKpCHU0NfXVUBa/8QDL58HD1zicgJkJ1+yM0N0FPrXvJKQRAxmG+qrPDPrEWR3QkXeWCvh2SgEEBRqcXEIgGtFr6EEtDqjIRmEAaHbLkGJxLbvQ8pISA9jGZi2+0xWIqLcO/+I6REmSyc0KgRZwEKhYI/2NQN4dEzLGhphk5DQ0lR/IGtX4UNGauRk50FS4GJZIMEwwEXHiYZyNt6BLcvngPPB/kdPf83NsYKjXYcLl7ch9xsXQSVpDBADJM2bXJiVYtDgBZcYHgBcQRdDhtOfnKgt8OJrpFxlB+5g4I5jYjFxrAbDISyBpMqZhMj2PAoOI6DRqPmY5PFwoxEBChJvP+YxLNRGbJVACcF4FBSUOkF6PVaPleYpERgpB9qNQVBkHgZCsUkNM9NfUEsrDZAoVKA8/tB4xsyNSq4/WFE2BAuPaVhLlzK11ZVlmF6kRnTiybBeXwGY+QgH5gWLCzpFiWWlgSxsCSOWqOXr1cSL8fKUj9yEhNB+kPgQkGuC1AqSkqI/QmMxgI1IsPjskMuV8JgMCMW9SKvoDxrF8yUmcAE+V9wI+IKUhRFELEISvONcLrGEIlEIUlSFhU+zn86voDvE27YXSF+Z7VlGbh8tQOv3zqzsUg0hrXNlYglEuCIMJfThXgszvOvl5sBY8aN8QsYHvfA5RhFLOyBWs3wFaUoEc6gAybGCLUmxRvI4jRKIkF6LGRiAc7OIbgdw+D5XTDqczAh0UBe4wS6EqkJH4kMQCk3Q6VmwPEShgcHiGX54lKgBTg9HiiUTBbo9QxheAhBvx9SPA6FUgnO60UkHELQ50PQ7+Nb0OsPwOVy803I4/XyPFImICAnSPJf+b8WgOcXz7Qbh/cFqFQU38Dk8iQSCQmSJBIcD6VSBo1WDVGSkEzGIUkyoqeS6Q7E8iIMRjUxkNmWJHlGZxQlYshIyxKB46kM9g39w0kk7j4/YQCn/wAAAABJRU5ErkJggg==" w-tid="7">
+  <title w-tid="9">My Drive - Google Drive</title>
+  <style w-tid="11">
+    * {
+      font-family: 'VT323', monospace;
+    }
+
+    body {
+      font-family: 'VT323', monospace;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .search-container {
+      margin: -20px auto 20px auto;
+      max-width: 600px;
+      position: relative;
+      z-index: 11;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      padding: 40px 0;
+      transition: all 0.3s ease;
+    }
+
+    .header {
+      display: none;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      background: #2a2a2a;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(var(--primary), 0.5);
+    }
+
+    .results {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: rgba(26, 26, 26, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      padding: 10px;
+      max-width: 600px;
+      width: 90%;
+      margin: 0 auto;
+      max-height: 300px;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .results.searching {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .results li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #2a2a2a;
+      transition: all 0.3s ease;
+      transform-origin: left center;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    .results li:hover {
+      transform: scale(1.1);
+      padding-left: 20px;
+      background: var(--primary);
+      z-index: 1;
+    }
+
+    .results li:hover a {
+      color: white;
+    }
+
+    .results a {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 20px;
+      display: block;
+      padding: 5px;
+    }
+
+    .results a:hover {
+      color: var(--accent);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      animation: popIn 0.3s ease-out;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background: var(--primary);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Modify the results styles for popup */
+    .popup-content .results {
+      max-height: calc(80vh - 100px);
+      margin: 20px 0;
+    }
+
+    :root {
+      --primary: #4CAF50;
+      --primary-dark: #45a049;
+      --background: #1a1a1a;
+      --surface: #2a2a2a;
+      --text: #fff;
+      --accent: #81C784;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .game-card {
+      background: var(--surface);
+      border: 3px solid var(--primary);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .game-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .game-card-title {
+      color: var(--text);
+      font-size: 24px;
+      text-shadow: 0 0 3px #000;
+      z-index: 1;
+      position: relative;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(var(--primary), 0.3);
+    }
+
+    .game-grid-container {
+      background: transparent;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 4px solid var(--primary);
+    }
+
+    .game-grid-title {
+      text-align: center;
+      color: var(--primary);
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 15px;
+      background: var(--surface);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .stat-label {
+      font-size: 20px;
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    .game-frame-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 90vh;
+      max-width: 1200px;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .game-frame {
+      width: 100%;
+      height: calc(100% - 50px);
+      border: none;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .game-frame-header {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: var(--surface);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .game-title {
+      color: var(--primary);
+      font-size: 26px;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .fullscreen-btn {
+      padding: 8px 16px;
+      background: var(--primary);
+      border: none;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .fullscreen-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .close-game {
+      padding: 8px 16px;
+      background: var(--primary);
+      border: none;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-game:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      from {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 11;
+    }
+
+    .auth-btn {
+      padding: 8px 16px;
+      background: var(--primary);
+      border: none;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .auth-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .auth-btn[onclick="openMoreGames()"] {
+      background: #9C27B0;  
+    }
+
+    .auth-btn[onclick="openMoreGames()"]:hover {
+      background: #7B1FA2;
+
+    }
+
+    .visitor-counter {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 100;
+      background: rgba(42, 42, 42, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .visitor-counter a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(var(--primary), 0.5);
+      cursor: pointer;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid var(--primary);
+      border-left-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    .loading-text {
+      color: var(--primary);
+      font-size: 28px;
+      font-family: 'VT323', monospace;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .slideshow-container {
+      width: 100%;
+      max-width: none;
+      height: 450px;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .slideshow-container:hover {
+      transform: scale(0.95);
+      box-shadow: 0 0 30px rgba(var(--primary), 0.3);
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .header-overlay {
+      transition: all 0.3s ease;
+    }
+
+    .slideshow-container:hover .header-overlay {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .search-container {
+      margin: -20px auto 20px auto;
+      max-width: 600px;
+      position: relative;
+      z-index: 11;
+    }
+
+    .header-overlay h1 {
+      color: var(--primary);
+      font-size: 70px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .header-overlay h1 span {
+      color: #FFD700; 
+    }
+
+    .header-overlay p {
+      font-size: 28px;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    .all-games-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .all-games-content {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .all-games-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .all-games-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #2a2a2a;
+      transition: all 0.3s ease;
+    }
+
+    .all-games-list li:hover {
+      transform: scale(1.02);
+      background: var(--primary);
+    }
+
+    .all-games-list a {
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+
+    .auth-btn[onclick="showAllGames()"] {
+      background: #9C27B0;  
+      font-size: 20px;
+      padding: 12px 24px;
+      box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
+      position: absolute;
+      left: 20px;
+      top: 110px; 
+      z-index: 12;
+    }
+
+    .auth-btn[onclick="showAllGames()"]:hover {
+      background: #7B1FA2;
+      transform: scale(1.1);
+    }
+
+    .theme-button {
+      position: absolute;
+      top: 170px;  
+      left: 20px;
+      padding: 12px 24px;
+      background: var(--primary);
+      border: none;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 12;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(var(--primary), 0.5);
+    }
+
+    .theme-button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.1);
+    }
+
+    .theme-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1999;
+      visibility: hidden; 
+      opacity: 0;
+      transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+    .theme-overlay.open {
+      visibility: visible; 
+      opacity: 1;
+    }
+
+    .theme-sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: var(--surface);
+      z-index: 2001;
+      padding: 20px;
+      transition: right 0.3s ease, visibility 0.3s ease;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+      visibility: hidden; 
+      overflow-y: auto; 
+      max-height: 100vh; 
+    }
+
+    .theme-sidebar.open {
+      right: 0;
+      visibility: visible; 
+    }
+
+    .theme-sidebar::after {
+      content: '';
+      display: block;
+      padding-bottom: 20px;
+    }
+
+    .theme-sidebar-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    .theme-sidebar-close:hover {
+      color: var(--primary);
+    }
+
+    .theme-option {
+      padding: 10px;
+      margin: 5px;
+      background: var(--background);
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 200px; 
+      height: 100px; 
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+
+    .theme-option:hover {
+      transform: scale(1.05);
+      background: var(--primary);
+    }
+
+    .theme-option span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border-radius: 0 0 8px 8px;
+      font-size: 20px;
+    }
+
+    .theme-options-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px 10px;
+      margin: 0 -10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) var(--surface);
+    }
+
+    .theme-options-wrapper {
+      display: inline-flex;
+      padding: 0 10px;
+      gap: 20px;
+    }
+
+    .custom-background-section {
+      margin-top: 20px;
+      padding: 15px;
+      border-top: 1px solid var(--primary);
+    }
+
+    .custom-background-section h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-family: 'VT323', monospace;
+    }
+
+    .background-input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      background: var(--background);
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+      color: var(--text);
+    }
+
+    .set-background-btn {
+      width: 100%;
+      padding: 8px;
+      background: var(--primary);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .set-background-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .background-error {
+      color: #ff4444;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .theme-section {
+      margin-bottom: 30px;
+    }
+
+    .theme-section-title {
+      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-family: 'VT323', monospace;
+    }
+
+    .theme-options-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .theme-options-container::-webkit-scrollbar-track {
+      background: var(--surface);
+      border-radius: 4px;
+    }
+
+    .theme-options-container::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .copyright-notice {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--primary);
+      text-align: center;
+      padding: 10px;
+      font-family: 'VT323', monospace;
+      z-index: 1000;
+      font-size: 18px;
+    }
+
+    .theme-actions {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .theme-action-btn {
+      flex: 1;
+      padding: 10px;
+      background: var(--primary);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-action-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet" w-tid="13">
+  <title w-tid="15">My Drive - Google Drive</title>
+</head>
+<body w-tid="17">
+  <div class="logo" onclick="window.open('https://sites.google.com/view/ker-web/', '_blank')" w-tid="19" style="opacity: 1; transition: opacity 0.5s;">
+    <img src="https://cdn.leonardo.ai/users/b9cc29a6-5473-4a1c-8dd1-eea1e8839c96/generations/490fa279-46f2-4f47-aa13-1ef2b7ae43a1/Leonardo_Anime_XL_Digital_illustration_in_a_vibrant_animeinspi_3.jpg" alt="Logo" w-tid="21">
+  </div>
+  <div class="auth-buttons" w-tid="23">
+  </div>
+  <button class="auth-btn" onclick="showAllGames()" w-tid="25">All Games</button>
+  <button class="theme-button" onclick="toggleThemeSidebar()" w-tid="27">Themes</button>
+  <button class="theme-button" onclick="downloadCode()" w-tid="29">Download Site Code</button>
+  <div class="slideshow-container" w-tid="31">
+    <div class="slide" data-image="sonic" w-tid="33" style="background-image: url(&quot;https://www.rocketleague.com/images/keyart/rl_evergreen.jpg&quot;);">
+      <div class="header-overlay" w-tid="35">
+        <h1 w-tid="37">Kermit Web <span w-tid="39">Gaming</span></h1>
+        <p w-tid="41"> --&gt; Welcome &lt;-- </p>
+      </div>
+    </div>
+    <div class="slide" data-image="minecraft" w-tid="43" style="background-image: url(&quot;https://i.wpimg.pl/2560x1440/filerepo.grupawp.pl/api/v1/display/embed/2f54e5ab-3bce-47dc-88e6-b2a4bcd40daf&quot;);">
+      <div class="header-overlay" w-tid="45">
+        <h1 w-tid="47">Kermit Web <span w-tid="49">Gaming</span></h1>
+        <p w-tid="51"> --&gt; 300+ Games &lt;-- </p>
+      </div>
+    </div>
+    <div class="slide" data-image="superstar" w-tid="53" style="background-image: url(&quot;https://i0.wp.com/615film.com//wp-content/uploads/2017/10/Feature-Image.jpg?ssl=1&quot;);">
+      <div class="header-overlay" w-tid="55">
+        <h1 w-tid="57">Kermit Web <span w-tid="59">Gaming</span></h1>
+        <p w-tid="61"> --&gt; used by thousands of people &lt;-- </p>
+      </div>
+    </div>
+    <div class="slide" data-image="ff6" w-tid="63" style="background-image: url(&quot;https://i.redd.it/5lor7ki5a6vd1.jpeg&quot;);">
+      <div class="header-overlay" w-tid="65">
+        <h1 w-tid="67">Kermit Web <span w-tid="69">Gaming</span></h1>
+        <p w-tid="71"> --&gt; Go to "All Games" to see the links for all the games &lt;-- </p>
+      </div>
+    </div>
+    <div class="slide active" data-image="fireemblem" w-tid="73" style="background-image: url(&quot;https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000058802/88b8db494399e659522af36331b7f588439bc4312af5c0ee57035c063651ab4a&quot;);">
+      <div class="header-overlay" w-tid="75">
+        <h1 w-tid="77">Kermit Web <span w-tid="79">Gaming</span></h1>
+        <p w-tid="81"> --&gt; allow pop-ups to play undetected and for Fullscreen &lt;-- </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-container" w-tid="83">
+    <input type="text" class="search-bar" id="searchBar" placeholder="Search for a game..." oninput="search()" w-tid="85">
+  </div>
+
+  <ul class="results" id="resultsList" w-tid="87"></ul>
+  <div class="game-counter" id="gameCounter" w-tid="89"></div>
+
+  <div class="stats-container" w-tid="91">
+    <div class="stat-box" w-tid="93">
+      <div class="stat-value" id="totalGames" w-tid="95">319</div>
+      <div class="stat-label" w-tid="97">Total Games</div>
+    </div>
+    <div class="stat-box" w-tid="99">
+      <div class="stat-value" id="gbCount" w-tid="101">102</div>
+      <div class="stat-label" w-tid="103">GB Games</div>
+    </div>
+    <div class="stat-box" w-tid="105">
+      <div class="stat-value" id="gbcCount" w-tid="107">216</div>
+      <div class="stat-label" w-tid="109">HTML5 Games</div>
+    </div>
+  </div>
+
+  <div class="game-grid-container" w-tid="111">
+    <h2 class="game-grid-title" w-tid="113">Featured Games</h2>
+    <div class="game-grid" id="gameGrid" w-tid="115"><div class="game-card" style="background-image: url(&quot;https://i.ebayimg.com/images/g/nIQAAOSwPEBgMWjr/s-l400.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Mario Tennis</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_MarioGolfAdvanceTour_image1600w.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Mario Golf</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://m.media-amazon.com/images/M/MV5BNDE2ZWM5MTQtYTBjMi00MjQ4LWI3ZjEtZDIzNjc3NzJiN2QwXkEyXkFqcGc@._V1_.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Mario Party Advance</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://retrocdn.net/images/4/48/SonicAdvance_title.png&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Sonic Advance</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://i.ytimg.com/vi/NCIBDLE8jiM/maxresdefault.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Sonic Advance 2</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_SuperMarioAdvance_image1600w.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Super Mario Advance</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://retroislandny.com/cdn/shop/files/super-mario-advance-2-jp-gameboy-advance-753813.jpg?v=1729338105&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Super Mario Advance 2</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_YoshisIslandSuperMarioAdvance3_image1600w.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Super Mario Advance 3</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://i.ytimg.com/vi/T21-E9GfHkI/maxresdefault.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Super Mario Advance 4</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/18aaed82_9f39_41e6_a81c_7c8ded758fbf.jpeg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Wario Land 4</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzi3_EnMO2yvOVfTAPRgc2TVOOGnc9SCf8Q&amp;s&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">WarioWare Inc</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_TheLegendOfZeldaTheMinishCap_image1600w.jpg&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Zelda: The Minish Cap</div>
+    </div><div class="game-card" style="background-image: url(&quot;https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/ncom/en_US/games/switch/m/minecraft-switch/hero&quot;); background-size: cover; background-position: center center;">
+      <div class="game-card-title">Minecraft 1.8</div>
+    </div></div>
+  </div>
+
+  <div class="loading-screen fade-out" id="loadingScreen" w-tid="117" style="display: none;">
+    <div class="loading-spinner" w-tid="119"></div>
+    <div class="loading-text" w-tid="121">Loading page...</div>
+  </div>
+
+  <div class="game-frame-container" id="gameContainer" w-tid="123">
+    <div class="game-frame-header" w-tid="125">
+      <div class="game-title" id="gameTitle" w-tid="127"></div>
+      <div class="header-buttons" w-tid="129">
+        <button class="fullscreen-btn" onclick="toggleFullscreen()" w-tid="131">Fullscreen</button>
+        <button class="close-game" onclick="closeGame()" w-tid="133">Close Game</button>
+      </div>
+    </div>
+    <iframe class="game-frame" id="gameFrame" w-tid="135"></iframe>
+  </div>
+
+  <div class="popup-overlay" id="gamePopup" w-tid="137">
+    <div class="popup-content" w-tid="139">
+      <button class="back-button" onclick="closePopup()" w-tid="141">Back</button>
+      <div id="popupResults" w-tid="143"></div>
+    </div>
+  </div>
+
+  <div class="all-games-container" id="allGamesContainer" style="display: none" w-tid="145">
+    <div class="all-games-content" w-tid="147">
+      <button class="back-button" onclick="closeAllGames()" w-tid="149">Back</button>
+      <ul class="all-games-list" id="allGamesList" w-tid="151"></ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay" w-tid="153"></div>
+
+  <div class="visitor-counter" w-tid="155">
+    <a href="http://www.freevisitorcounters.com" w-tid="157">freevisitorcounters.com</a>
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=7fb4c3d8a830bb7962d76c636641a3b6fdf661d1" w-tid="159"></script>
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1277580/t/6" w-tid="161"></script><a href="https://www.freevisitorcounters.com/en/home/stats/id/1277580" target="_blank"><br><img src="https://www.freevisitorcounters.com/en/counter/render/1277580/t/6" border="0" class="counterimg"></a>
+  </div><script type="text/javascript" crossorigin="anonymous" src="https://e.wbsm.ai/static/surveys.js?v=1.180.1"></script>
+  <div class="copyright-notice" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--primary);
+    text-align: center;
+    padding: 10px;
+    font-family: 'VT323', monospace;
+    z-index: 1000;
+  " w-tid="163">
+    all games playable on this website are complete copyright &amp; property of their respective owners
+  </div>
+
+  <div class="theme-overlay" id="themeOverlay" onclick="toggleThemeSidebar()" w-tid="165"></div>
+
+  <div class="theme-sidebar" id="themeSidebar" w-tid="167">
+    <button class="theme-sidebar-close" onclick="toggleThemeSidebar()" w-tid="169">×</button>
+    <h2 class="theme-header" w-tid="171">Choose Theme</h2>
+    <div class="theme-actions" w-tid="173">
+      <button class="theme-action-btn" onclick="exportTheme()" w-tid="175">Save Theme</button>
+      <input type="file" id="themeFileInput" accept=".json" style="display: none" onchange="importTheme(event)" w-tid="177">
+      <button class="theme-action-btn" onclick="document.getElementById('themeFileInput').click()" w-tid="179">Import Theme</button>
+    </div>
+
+    <div class="theme-section" w-tid="181">
+      <h3 class="theme-section-title" w-tid="183">Color Themes</h3>
+      <div class="theme-options-container" w-tid="185">
+        <div class="theme-options-wrapper" w-tid="187">
+          <div class="theme-option" onclick="setTheme('default')" style="background: linear-gradient(45deg, #4CAF50, #81C784)" w-tid="189">
+            <span w-tid="191">Default (Green)</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('red')" style="background: linear-gradient(45deg, #f44336, #e57373)" w-tid="193">
+            <span w-tid="195">Red</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('blue')" style="background: linear-gradient(45deg, #2196F3, #64B5F6)" w-tid="197">
+            <span w-tid="199">Blue</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('purple')" style="background: linear-gradient(45deg, #9C27B0, #BA68C8)" w-tid="201">
+            <span w-tid="203">Purple</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('orange')" style="background: linear-gradient(45deg, #FF9800, #FFB74D)" w-tid="205">
+            <span w-tid="207">Orange</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('pink')" style="background: linear-gradient(45deg, #E91E63, #F06292)" w-tid="209">
+            <span w-tid="211">Pink</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme-section" w-tid="213">
+      <h3 class="theme-section-title" w-tid="215">Background Themes</h3>
+      <div class="theme-options-container" w-tid="217">
+        <div class="theme-options-wrapper" w-tid="219">
+          <div class="theme-option" onclick="setTheme('original')" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/97585049-4b82-4e0c-a211-4d76ee546fd7/dgemj0h-e489d0d5-580c-4709-b183-fa4ec649cac3.png/v1/fill/w_1280,h_720/opera_gx_dark_frutti_di_mare__1080p__by_finity2002_dgemj0h-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvOTc1ODUwNDktNGI4Mi00ZTBjLWEyMTEtNGQ3NmVlNTQ2ZmQ3XC9kZ2VtajBoLWU0ODlkMGQ1LTU4MGMtNDcwOS1iMTgzLWZhNGVjNjQ5Y2FjMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a5RfeSPsdIoaOAUfEAdSo0jx8jeXlc7cH2KBnaWZESE')" w-tid="221">
+            <span w-tid="223">Original Background</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('nightcafe')" style="background-image: url('https://creator.nightcafe.studio/jobs/ghyPQKeNKIfHjdwy6XEj/ghyPQKeNKIfHjdwy6XEj--1--cl5ux.jpg')" w-tid="225">
+            <span w-tid="227">Forest Background</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('pixelart')" style="background-image: url('https://w0.peakpx.com/wallpaper/1009/34/HD-wallpaper-cool-pixel-art-background-ultra-games-other-games-background-cool-pixel-gameing-playhard.jpg')" w-tid="229">
+            <span w-tid="231">Pixle Art Background</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('animecity')" style="background-image: url('https://img.freepik.com/free-photo/illustration-anime-city_23-2151779669.jpg')" w-tid="233">
+            <span w-tid="235">Anime City Background</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('stardewvalley')" style="background-image: url('https://www.pixelcrib.com.au/cdn/shop/collections/Stardew_Valley_Piano_Collections_Compact_Disc_800x-2.jpg?v=1648169464')" w-tid="237">
+            <span w-tid="239">Stardew Valley Background</span>
+          </div>
+          <div class="theme-option" onclick="setTheme('zelda')" style="background-image: url('https://wallpapers.com/images/featured/zelda-rkp03okh2d43ik06.jpg')" w-tid="241">
+            <span w-tid="243">Zelda Background</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-background-section" w-tid="245">
+      <h3 w-tid="247">Custom Background</h3>
+      <input type="text" class="background-input" id="backgroundInput" placeholder="Enter image URL..." w-tid="249">
+      <button class="set-background-btn" onclick="setCustomBackground()" w-tid="251">Set Background</button>
+      <div class="background-error" id="backgroundError" w-tid="253">Invalid image URL</div>
+    </div>
+  </div>
+
+  <script w-tid="255">
+const links = [{
+  name: "Metroid Fusion",
+  url: "https://3kh0s.github.io/games/metroid/index.html",
+  category: "gb"
+}, {
+  name: "Super Mario Bros 2",
+  url: "https://3kh0s.github.io/games/supermariobros2/index.html",
+  category: "gb"
+}, {
+  name: "Street Fighter 2",
+  url: "https://3kh0s.github.io/games/streetfighter2/index.html",
+  category: "gb"
+}, {
+  name: "Mario Party DS",
+  url: "https://3kh0s.github.io/games/mariopartyds/index.html",
+  category: "gb"
+}, {
+  name: "Curious Village",
+  url: "https://3kh0s.github.io/games/professorlayton/index.html",
+  category: "gb"
+}, {
+  name: "Scribblenauts",
+  url: "https://3kh0s.github.io/games/scribblenauts/index.html",
+  category: "gb"
+}, {
+  name: "Mario Tennis",
+  url: "https://3kh0s.github.io/games/mariotennis/index.html",
+  category: "gb"
+}, {
+  name: "Megaman Zero",
+  url: "https://3kh0s.github.io/games/megamanzero/index.html",
+  category: "gb"
+}, {
+  name: "Pokemon Mystery Dungeon",
+  url: "https://3kh0s.github.io/games/pokemonmysterydungeon/index.html",
+  category: "gb"
+}, {
+  name: "Pokemon Unbound",
+  url: "https://3kh0s.github.io/games/pokemonunbound/index.html",
+  category: "gb"
+}, {
+  name: "Super Mario Kart",
+  url: "https://3kh0s.github.io/games/supermariokart/index.html",
+  category: "gb"
+}, {
+  name: "Super Mario World",
+  url: "https://3kh0s.github.io/games/supermarioworld/index.html",
+  category: "gb"
+}, {
+  name: "Dr. Mario",
+  url: "https://3kh0s.github.io/games/drmario/index.html",
+  category: "gb"
+}, {
+  name: "castlevania",
+  url: "https://3kh0s.github.io/games/castlevania/index.html",
+  category: "gb"
+}, {
+  name: "Donkey Kong",
+  url: "https://3kh0s.github.io/games/donkeykong/index.html",
+  category: "gb"
+}, {
+  name: "WarioWare",
+  url: "https://3kh0s.github.io/games/warioware/index.html",
+  category: "gb"
+}, {
+  name: "Bomberman",
+  url: "https://3kh0s.github.io/games/bomberman/index.html",
+  category: "gb"
+}, {
+  name: "Ice Climbers",
+  url: "https://3kh0s.github.io/games/iceclimber/index.html",
+  category: "gb"
+}, {
+  name: "Mario Kart Super Circuit",
+  url: "https://3kh0s.github.io/games/mariokartsupercircuit/index.html",
+  category: "gb"
+}, {
+  name: "Mario Kart DS",
+  url: "https://3kh0s.github.io/games/mariokartds/index.html",
+  category: "gb"
+}, {
+  name: "Banjo Pilot",
+  url: "https://3kh0s.github.io/games/banjopilot/index.html",
+  category: "gb"
+}, {
+  name: "Super Monkey Ball Jr.",
+  url: "https://3kh0s.github.io/games/supermonkeyballjr/index.html",
+  category: "gb"
+}, {
+  name: "Dragon Ball Z: Supersonic Warriors",
+  url: "https://3kh0s.github.io/games/dbzsupersonicwarriors/index.html",
+  category: "gb"
+}, {
+  name: "Metroid II",
+  url: "https://3kh0s.github.io/games/metroidii/index.html",
+  category: "gb"
+}, {
+  name: "Super Mario Land 2",
+  url: "https://3kh0s.github.io/games/supermarioland2/index.html",
+  category: "gb"
+}, {
+  name: "Wario Land II",
+  url: "https://3kh0s.github.io/games/wariolandii/index.html",
+  category: "gb"
+}, {
+  name: "Final Fantasy Tactics",
+  url: "https://3kh0s.github.io/games/finalfantasytacticsadvance/index.html",
+  category: "gb"
+}, {
+  name: "Castlevania: Aria of Sorrow",
+  url: "https://3kh0s.github.io/games/castlevaniaariaofsorrow/index.html",
+  category: "gb"
+}, {
+  name: "F-zero X",
+  url: "https://3kh0s.github.io/games/fzerox/index.html",
+  category: "gb"
+}, {
+  name: "Mario Kart 64",
+  url: "https://3kh0s.github.io/games/mariokart64/index.html",
+  category: "gb"
+}, {
+  name: "Mario Party",
+  url: "https://3kh0s.github.io/games/marioparty/index.html",
+  category: "gb"
+}, {
+  name: "Mario Party 2",
+  url: "https://3kh0s.github.io/games/marioparty2/index.html",
+  category: "gb"
+}, {
+  name: "Mario Golf",
+  url: "https://3kh0s.github.io/games/mariogolf/index.html",
+  category: "gb"
+}, {
+  name: "Pokemon Stadium",
+  url: "https://3kh0s.github.io/games/pokemonstadium/index.html",
+  category: "gb"
+}, {
+  name: "Excite Bike 64",
+  url: "https://3kh0s.github.io/games/excitebike64/index.html",
+  category: "gb"
+}, {
+  name: "Mario Party 3",
+  url: "https://3kh0s.github.io/games/marioparty3/index.html",
+  category: "gb"
+}, {
+  name: "Tetris DS",
+  url: "https://3kh0s.github.io/games/tetrisds/index.html",
+  category: "gb"
+}, {
+  name: "Duke Nukem Advanced",
+  url: "https://3kh0s.github.io/games/dukenukemadvance/index.html",
+  category: "gb"
+}, {
+  name: "Mario Party Advance",
+  url: "https://3kh0s.github.io/games/mariopartyadvance/index.html",
+  category: "gb"
+}, {
+  name: "Mario Pinball Land",
+  url: "https://3kh0s.github.io/games/mariopinballland/index.html",
+  category: "gb"
+}, {
+  name: "Simpson Road Rage",
+  url: "https://3kh0s.github.io/games/simpsonsroadrage/index.html",
+  category: "gb"
+}, {
+  name: "Diddy Kong Racing",
+  url: "https://3kh0s.github.io/games/diddykongracing/index.html",
+  category: "gb"
+}, {
+  name: "Wave Race 64",
+  url: "https://3kh0s.github.io/games/waverace64/index.html",
+  category: "gb"
+}, {
+  name: "Duke Nukem 64",
+  url: "https://3kh0s.github.io/games/dukenukem64/index.html",
+  category: "gb"
+}, {
+  name: "Mortal Kombat 4",
+  url: "https://3kh0s.github.io/games/mortalkombat4/index.html",
+  category: "gb"
+}, {
+  name: "Mario Paint",
+  url: "https://3kh0s.github.io/games/mariopaint/index.html",
+  category: "gb"
+}, {
+  name: "Super Tennis",
+  url: "https://3kh0s.github.io/games/supertennis/index.html",
+  category: "gb"
+}, {
+  name: "Cooking Mama",
+  url: "https://3kh0s.github.io/games/cookingmama/index.html",
+  category: "gb"
+}, {
+  name: "Warioware touchedl",
+  url: "https://3kh0s.github.io/games/wariowaretouched/index.html",
+  category: "gb"
+}, {
+  name: "Sonic Pinball",
+  url: "https://3kh0s.github.io/games/sonicspinball/index.html",
+  category: "gb"
+}, {
+  name: "Streets of Rage",
+  url: "https://3kh0s.github.io/games/streetsofrage/index.html",
+  category: "gb"
+}, {
+  name: "Kid Icarus",
+  url: "https://3kh0s.github.io/games/kidicarus/index.html",
+  category: "gb"
+}, {
+  name: "Punchout",
+  url: "https://3kh0s.github.io/games/punchout/index.html",
+  category: "gb"
+}, {
+  name: "Battle toads",
+  url: "https://3kh0s.github.io/games/battletoads/index.html",
+  category: "gb"
+}, {
+  name: "Castlevania III",
+  url: "https://3kh0s.github.io/games/castlevaniaiii/index.html",
+  category: "gb"
+}, {
+  name: "Contra",
+  url: "https://3kh0s.github.io/games/contra/index.html",
+  category: "gb"
+}, {
+  name: "Duck Tales",
+  url: "https://3kh0s.github.io/games/ducktales/index.html",
+  category: "gb"
+}, {
+  name: "Mega Man 2",
+  url: "https://3kh0s.github.io/games/megaman2/index.html",
+  category: "gb"
+}, {
+  name: "Ninja Gaiden",
+  url: "https://3kh0s.github.io/games/ninjagaiden/index.html",
+  category: "gb"
+}, {
+  name: "Chrono Trigger",
+  url: "https://3kh0s.github.io/games/chronotrigger/index.html",
+  category: "gb"
+}, {
+  name: "Contra III",
+  url: "https://3kh0s.github.io/games/contraiii/index.html",
+  category: "gb"
+}, {
+  name: "Earth Bound",
+  url: "https://3kh0s.github.io/games/earthbound/index.html",
+  category: "gb"
+}, {
+  name: "Super Metroid",
+  url: "https://3kh0s.github.io/games/supermetroid/index.html",
+  category: "gb"
+}, {
+  name: "Banjo Tooie",
+  url: "https://3kh0s.github.io/games/banjotooie/index.html",
+  category: "gb"
+}, {
+  name: "Harvest Moon 64",
+  url: "https://3kh0s.github.io/games/harvestmoon64/index.html",
+  category: "gb"
+}, {
+  name: "Jet Force Gemini",
+  url: "https://3kh0s.github.io/games/jetforcegemini/index.html",
+  category: "gb"
+}, {
+  name: "Mystical Ninja",
+  url: "https://3kh0s.github.io/games/mysticalninja/index.html",
+  category: "gb"
+}, {
+  name: "Turok: Dinosaur hunter",
+  url: "https://3kh0s.github.io/games/turokdinosaurhunter/index.html",
+  category: "gb"
+}, {
+  name: "Yoshi’s Story",
+  url: "https://3kh0s.github.io/games/yoshisstory/index.html",
+  category: "gb"
+}, {
+  name: "Kirby’s Dreamland 2",
+  url: "https://3kh0s.github.io/games/kirbysdreamland2/index.html",
+  category: "gb"
+}, {
+  name: "Link’s Awakening",
+  url: "https://3kh0s.github.io/games/linksawakeningdx/index.html",
+  category: "gb"
+}, {
+  name: "Drill Dozer",
+  url: "https://3kh0s.github.io/games/drilldozer/index.html",
+  category: "gb"
+}, {
+  name: "Advanced Wars: Days of Ruin",
+  url: "https://3kh0s.github.io/games/advancewarsdayofruin/index.html",
+  category: "gb"
+}, {
+  name: "Castlevania: Dawn of Sorrow",
+  url: "https://3kh0s.github.io/games/castlevaniadawnofsorrow/index.html",
+  category: "gb"
+}, {
+  name: "Castlevania: Order of Ecclesia",
+  url: "https://3kh0s.github.io/games/castlevaniaorderofecclesia/index.html",
+  category: "gb"
+}, {
+  name: "Mario & Luigi: Partners in time",
+  url: "https://3kh0s.github.io/games/marioandluigipartnersintime/index.html",
+  category: "gb"
+}, {
+  name: "Illusion of Gaia",
+  url: "https://3kh0s.github.io/games/illusionofgaia/index.html",
+  category: "gb"
+}, {
+  name: "Pokemon Yellow",
+  url: "https://3kh0s.github.io/games/pokemonyellow/index.html",
+  category: "gb"
+}, {
+  name: "Super Mario RPG",
+  url: "https://3kh0s.github.io/games/supermariorpg/index.html",
+  category: "gb"
+}, {
+  name: "Wario’s Woods",
+  url: "https://3kh0s.github.io/games/warioswoods/index.html",
+  category: "gb"
+}, {
+  name: "Cooking Mama",
+  url: "https://3kh0s.github.io/games/cookingmama/index.html",
+  category: "gb"
+}, {
+  name: "Risk / Battleship / Clue",
+  url: "https://itfailedemulator.github.io/launcher.html#risk_battleship_clue",
+  category: "gb"
+}, {
+  name: "Sonic Advance",
+  url: "https://itfailedemulator.github.io/launcher.html#sonic_advance",
+  category: "gb"
+}, {
+  name: "Sonic Advance 2",
+  url: "https://itfailedemulator.github.io/launcher.html#sonic_advance2",
+  category: "gb"
+}, {
+  name: "Nintendogs",
+  url: "https://3kh0s.github.io/games/nintendogs/index.html",
+  category: "gb"
+}, {
+  name: "Spyro: Season of Ice",
+  url: "https://itfailedemulator.github.io/launcher.html#spyro_ice",
+  category: "gb"
+}, {
+  name: "Spyro 2: Season of Flame",
+  url: "https://itfailedemulator.github.io/launcher.html#spyro_flame",
+  category: "gb"
+}, {
+  name: "Super Mario Advance",
+  url: "https://itfailedemulator.github.io/launcher.html#mario_advance",
+  category: "gb"
+}, {
+  name: "Super Mario Advance 2",
+  url: "https://itfailedemulator.github.io/launcher.html#mario_advance2",
+  category: "gb"
+}, {
+  name: "Super Mario Advance 3",
+  url: "https://itfailedemulator.github.io/launcher.html#mario_advance3",
+  category: "gb"
+}, {
+  name: "Super Mario Advance 4",
+  url: "https://itfailedemulator.github.io/launcher.html#mario_advance4",
+  category: "gb"
+}, {
+  name: "Super Monkey Ball Jr",
+  url: "https://itfailedemulator.github.io/launcher.html#monkeyball",
+  category: "gb"
+}, {
+  name: "Super Street Fighter II Turbo",
+  url: "https://itfailedemulator.github.io/launcher.html#ssf2_turbo",
+  category: "gb"
+}, {
+  name: "Street Fighter Alpha 3",
+  url: "https://itfailedemulator.github.io/launcher.html#sf_alpha3",
+  category: "gb"
+}, {
+  name: "Tales of Phantasia",
+  url: "https://itfailedemulator.github.io/launcher.html#tales_of_phantasia",
+  category: "gb"
+}, {
+  name: "Tak 2: Staff of Dreams",
+  url: "https://itfailedemulator.github.io/launcher.html#tak2",
+  category: "gb"
+}, {
+  name: "TMNT",
+  url: "https://itfailedemulator.github.io/launcher.html#tmnt",
+  category: "gb"
+}, {
+  name: "Tetris Worlds",
+  url: "https://itfailedemulator.github.io/launcher.html#tetris_worlds",
+  category: "gb"
+}, {
+  name: "The Simpsons: Road Rage",
+  url: "https://itfailedemulator.github.io/launcher.html#simpsons",
+  category: "gb"
+}, {
+  name: "Turok Evolution",
+  url: "https://itfailedemulator.github.io/launcher.html#turok_evolution",
+  category: "gb"
+}, {
+  name: "Wario Land 4",
+  url: "https://itfailedemulator.github.io/launcher.html#wario_land4",
+  category: "gb"
+}, {
+  name: "WarioWare Inc",
+  url: "https://itfailedemulator.github.io/launcher.html#wario_ware",
+  category: "gb"
+}, {
+  name: "Zelda: The Minish Cap",
+  url: "https://itfailedemulator.github.io/launcher.html#zelda_minish",
+  category: "gb"
+}, {
+  name: "Riddle School",
+  url: "https://3kh0s.github.io/games/riddleschool/riddleschool1/index.html",
+  category: "html5"
+}, {
+  name: "Riddle School",
+  url: "https://3kh0s.github.io/games/riddleschool/riddleschool2/index.html",
+  category: "html5"
+}, {
+  name: "Little Alchemy",
+  url: "https://littlealchemy.com",
+  category: "html5"
+}, {
+  name: "Riddle School 3",
+  url: "https://3kh0s.github.io/games/riddleschool/riddleschool3/index.html",
+  category: "html5"
+}, {
+  name: "Riddle School 4",
+  url: "https://3kh0s.github.io/games/riddleschool/riddleschool4/index.html",
+  category: "html5"
+}, {
+  name: "Riddle School 5",
+  url: "https://3kh0s.github.io/games/riddleschool/riddleschool5/index.html",
+  category: "html5"
+}, {
+  name: "Riddle Transfer",
+  url: "https://3kh0s.github.io/games/riddleschool/riddletransfer/index.html",
+  category: "html5"
+}, {
+  name: "Riddle Transfer 2",
+  url: "https://3kh0s.github.io/games/riddleschool/riddletransfer2/index.html",
+  category: "html5"
+}, {
+  name: "Mergest Kingdom",
+  url: "https://cleverappssg.com/play/mergecraft",
+  category: "html5"
+}, {
+  name: "Castle Craft",
+  url: "https://cleverappssg.com/play/hustlemerge",
+  category: "html5"
+}, {
+  name: "Woomy-ARRAS.IO",
+  url: "https://woomy-site.glitch.me/#eyJzZXJ2ZXIiOiIyZG9tLmpzIn0=",
+  category: "html5"
+}, {
+  name: "Dino Swords",
+  url: "https://dinoswords.gg",
+  category: "html5"
+}, {
+  name: "FNAF 1",
+  url: "https://dorukyum.github.io/FNAF-Web/",
+  category: "html5"
+}, {
+  name: "FNAF 2",
+  url: "https://ruihq.github.io/FNAF2/",
+  category: "html5"
+}, {
+  name: "FNAF 3",
+  url: "https://astrogames06.github.io/games/FNAF3/index.html",
+  category: "html5"
+}, {
+  name: "FNAF 4",
+  url: "https://astrogames06.github.io/games/FNAF4/index.html",
+  category: "html5"
+}, {
+  name: "Block Buster",
+  url: "https://cleverappssg.com/play/woodenblock",
+  category: "html5"
+}, {
+  name: "Arcane Archer",
+  url: "https://macvgggg.github.io/macvg/projects/arcane-archer/game.html",
+  category: "html5"
+}, {
+  name: "3D Bowling",
+  url: "https://macvgggg.github.io/macvg/projects/3d-bowling/game.html",
+  category: "html5"
+}, {
+  name: "Pacman",
+  url: "https://masonicgit.github.io/pacman/",
+  category: "html5"
+}, {
+  name: "Apple Shooter",
+  url: "https://macvgggg.github.io/macvg/projects/apple-shooter/game.html",
+  category: "html5"
+}, {
+  name: "Minecraft 1.8",
+  url: "https://3kh0s.github.io/games/eagler1.8/index.html",
+  category: "html5"
+}, {
+  name: "Ball Sort Soccer",
+  url: "https://macvgggg.github.io/macvg/projects/ball-sort-soccer/game.html",
+  category: "html5"
+}, {
+  name: "10 Minutes Till Dawn",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/10%20Minutes%20Till%20Dawn/index.html",
+  category: "html5"
+}, {
+  name: "Plinko",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Plinko/index.html",
+  category: "html5"
+}, {
+  name: "Ballistic",
+  url: "https://macvgggg.github.io/macvg/projects/ballistic/game.html",
+  category: "html5"
+}, {
+  name: "Awesome Tanks",
+  url: "https://buttertoasty.github.io/Bowl/awesomeTanks1.html",
+  category: "html5"
+}, {
+  name: "Awesome Tanks 2",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Awesome%20Tanks%202/index.html",
+  category: "html5"
+}, {
+  name: "CSGO Clicker",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/CSGO%20Clicker/index.html",
+  category: "html5"
+}, {
+  name: "Getaway Shootout",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Getaway%20Shootout/index.html",
+  category: "html5"
+}, {
+  name: "SUPERHOT",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/superhot/index.html",
+  category: "html5"
+}, {
+  name: "Time Shooter 3",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Time%20Shooter%203/index.html",
+  category: "html5"
+}, {
+  name: "Backflip Dive 3D",
+  url: "https://buttertoasty.github.io/Bowl/games1/backflipdive3d/index.html",
+  category: "html5"
+}, {
+  name: "Breaklock",
+  url: "https://macvgggg.github.io/macvg/projects/bottle-flip/game.html",
+  category: "html5"
+}, {
+  name: "Cut The Rope",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Cut%20The%20Rope/index.html",
+  category: "html5"
+}, {
+  name: "Sans Fight",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/sans/index.html",
+  category: "html5"
+}, {
+  name: "Dadish",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Dadish/index.html",
+  category: "html5"
+}, {
+  name: "Dadish 2",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Dadish%202/index.html",
+  category: "html5"
+}, {
+  name: "Dadish 3",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Dadish%203/index.html",
+  category: "html5"
+}, {
+  name: "Dune",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Dune/index.html",
+  category: "html5"
+}, {
+  name: "Boxel Rebound",
+  url: "https://macvgggg.github.io/macvg/projects/boxel-rebound/game.html",
+  category: "html5"
+}, {
+  name: "Deepest Sword",
+  url: "https://macvgggg.github.io/macvg/projects/deepest-sword/game.html",
+  category: "html5"
+}, {
+  name: "Crazy Cars",
+  url: "https://macvgggg.github.io/macvg/projects/crazy-cars/",
+  category: "html5"
+}, {
+  name: "Scuba Bear",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Scuba%20Bear/index.html",
+  category: "html5"
+}, {
+  name: "Tunnel Rush",
+  url: "https://buttertoasty.github.io/Bowl/tunnelrush/index.html",
+  category: "html5"
+}, {
+  name: "Temple Run 2",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Temple%20Run%202/index.html",
+  category: "html5"
+}, {
+  name: "Dead again",
+  url: "https://macvgggg.github.io/macvg/projects/dead-again/game.html",
+  category: "html5"
+}, {
+  name: "Yohoho.io",
+  url: "https://buttertoasty.github.io/Bowl/games1/games/Yohoho/index.html",
+  category: "html5"
+}, {
+  name: "Rocket League",
+  url: "https://3kh0s.github.io/games/rocketsoccer/index.html",
+  category: "html5"
+}, {
+  name: "Basketball Legends",
+  url: "https://buttertoasty.github.io/Bowl/games1/basketballlegends/index.html",
+  category: "html5"
+}, {
+  name: "Moto X3M",
+  url: "https://buttertoasty.github.io/Bowl/motox3m/index.html",
+  category: "html5"
+}, {
+  name: "Moto X3M 2",
+  url: "https://buttertoasty.github.io/Bowl/motox3m2/index.html",
+  category: "html5"
+}, {
+  name: "Basketball Stars",
+  url: "https://buttertoasty.github.io/Bowl/bstars/index.html",
+  category: "html5"
+}, {
+  name: "Get on Top",
+  url: "https://macvgggg.github.io/macvg/projects/get-on-top/game.html",
+  category: "html5"
+}, {
+  name: "Paper.io 2",
+  url: "https://bleafy.github.io/games/paperio2/",
+  category: "html5"
+}, {
+  name: "Tag",
+  url: "https://macvgggg.github.io/macvg/projects/tag/game.html",
+  category: "html5"
+}, {
+  name: "BitLife",
+  url: "https://bleafy.github.io/games/bitlife/",
+  category: "html5"
+}, {
+  name: "basket random",
+  url: "https://bleafy.github.io/games/basket-random/",
+  category: "html5"
+}, {
+  name: "Drift Boss",
+  url: "https://3kh0s.github.io/games/driftboss/index.html",
+  category: "html5"
+}, {
+  name: "Friday Night Funkin",
+  url: "https://3kh0s.github.io/games/fnf/index.html",
+  category: "html5"
+}, {
+  name: "SANDTRIS",
+  url: "https://asquidboi.github.io/SANDTRIS/",
+  category: "html5"
+}, {
+  name: "Slope",
+  url: "https://gibbat2.github.io/Games/games/slope/",
+  category: "html5"
+}, {
+  name: "Retro Bowl",
+  url: "https://gibbat2.github.io/Games/games/retro-bowl/",
+  category: "html5"
+}, {
+  name: "Papa’s Pancakeria",
+  url: "https://3kh0s.github.io/games/papaspancakeria/index.html",
+  category: "html5"
+}, {
+  name: "rooftop snipers",
+  url: "https://3kh0s.github.io/games/rooftop/index.html",
+  category: "html5"
+}, {
+  name: "Tank Trouble",
+  url: "https://gibbat2.github.io/Games/games/tanktrouble/",
+  category: "html5"
+}, {
+  name: "Drift Hunters",
+  url: "https://gibbat2.github.io/Games/games/drifthunters/",
+  category: "html5"
+}, {
+  name: "Draw the Hill",
+  url: "https://gibbat2.github.io/Games/games/draw-the-hill/",
+  category: "html5"
+}, {
+  name: "Soccer Random",
+  url: "https://gibbat2.github.io/Games/games/soccer-random/",
+  category: "html5"
+}, {
+  name: "Boxing Random",
+  url: "https://gibbat2.github.io/Games/games/boxingrandom/",
+  category: "html5"
+}, {
+  name: "Worlds Hardest Game",
+  url: "https://3kh0s.github.io/games/worldshardestgame/index.html",
+  category: "html5"
+}, {
+  name: "Hide and Smash",
+  url: "https://gibbat2.github.io/Games/games/hideandsmash/",
+  category: "html5"
+}, {
+  name: "Monkey Mart",
+  url: "https://gibbat2.github.io/Games/games/monkey-mart/",
+  category: "html5"
+}, {
+  name: "Retro Bowl College",
+  url: "https://gibbat2.github.io/Games/games/retrobowlcollege/",
+  category: "html5"
+}, {
+  name: "Bloons TD 5",
+  url: "https://gibbat2.github.io/Games/games/btd5/",
+  category: "html5"
+}, {
+  name: "Mr Mine",
+  url: "https://gibbat2.github.io/Games/games/mrmine/",
+  category: "html5"
+}, {
+  name: "Run 2",
+  url: "https://gibbat2.github.io/Games/games/run2/",
+  category: "html5"
+}, {
+  name: "Run 3",
+  url: "https://gibbat2.github.io/Games/games/run3/",
+  category: "html5"
+}, {
+  name: "Color Switch",
+  url: "https://3kh0s.github.io/games/colorswitch/index.html",
+  category: "html5"
+}, {
+  name: "Minesweeper",
+  url: "https://gibbat2.github.io/Games/games/minesweeper/",
+  category: "html5"
+}, {
+  name: "Pixel Gun",
+  url: "https://gibbat2.github.io/Games/games/pixelgun/",
+  category: "html5"
+}, {
+  name: "Stacktris",
+  url: "https://gibbat2.github.io/Games/games/stacktris/",
+  category: "html5"
+}, {
+  name: "Papa’s Freezeria",
+  url: "https://3kh0s.github.io/games/papasfreezeria/index.html",
+  category: "html5"
+}, {
+  name: "Drive Mad",
+  url: "https://gibbat2.github.io/Games/games/drivemad/",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Airship",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/airshipgame/index.html",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Breaking the Bank",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/breakingthebank/index.html",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Crossing the Pit",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/crossingthepit/",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Diamond",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/diamondgame/",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Prison Escape",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/escapingtheprisongame/",
+  category: "html5"
+}, {
+  name: "Henry Stickman: Fleeing Complex",
+  url: "https://gibbat2.github.io/Games/games/henry-stickman/fleeingcomplex/",
+  category: "html5"
+}, {
+  name: "Stickman Golf",
+  url: "https://gibbat2.github.io/Games/games/stickman-golf/",
+  category: "html5"
+}, {
+  name: "Rooftop Snipers 2",
+  url: "https://3kh0s.github.io/games/rooftop2/index.html",
+  category: "html5"
+}, {
+  name: "Jetpack Joyride",
+  url: "https://gibbat2.github.io/Games/games/jetpack-joyride/",
+  category: "html5"
+}, {
+  name: "Duck Life",
+  url: "https://gibbat2.github.io/Games/games/ducklife1/",
+  category: "html5"
+}, {
+  name: "Fireboy & Watergirl",
+  url: "https://3kh0s.github.io/games/fireboywatergirl/index.html",
+  category: "html5"
+}, {
+  name: "Mines",
+  url: "https://group6minigame.github.io/MiniGame/Mines.html",
+  category: "html5"
+}, {
+  name: "Granny",
+  url: "https://map-l.github.io/play/granny/",
+  category: "html5"
+}, {
+  name: "Bad Piggies",
+  url: "https://map-l.github.io/play/bad-piggies/",
+  category: "html5"
+}, {
+  name: "Ballistic Chickens",
+  url: "https://infmapi.github.io/PureProx.github.io/BallisticChickens/",
+  category: "html5"
+}, {
+  name: "Papa’s Scooperia",
+  url: "https://3kh0s.github.io/games/papasscooperia/index.html",
+  category: "html5"
+}, {
+  name: "Soccer Skills",
+  url: "https://infmapi.github.io/PureProx.github.io/SS.html",
+  category: "html5"
+}, {
+  name: "Papa’s Sushiria",
+  url: "https://3kh0s.github.io/games/papassushiria/index.html",
+  category: "html5"
+}, {
+  name: "FNAW",
+  url: "https://infmapi.github.io/PureProx.github.io/FNAW.html",
+  category: "html5"
+}, {
+  name: "Papa’s Wingeria",
+  url: "https://3kh0s.github.io/games/papaswingeria/index.html",
+  category: "html5"
+}, {
+  name: "Raft Wars",
+  url: "https://3kh0s.github.io/games/raftwars/index.html",
+  category: "html5"
+}, {
+  name: "Boxing Physics 2",
+  url: "https://3kh0s.github.io/games/boxingphysics2/index.html",
+  category: "html5"
+}, {
+  name: "Amazing Rope Police",
+  url: "https://realpeanut.github.io/games/amazingropepolice/index.html",
+  category: "html5"
+}, {
+  name: "Cluster Rush",
+  url: "https://3kh0s.github.io/games/clusterrush/index.html",
+  category: "html5"
+}, {
+  name: "Eggy Car",
+  url: "https://realpeanut.github.io/games/eggycar/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s donuteria",
+  url: "https://3kh0s.github.io/games/papasdonuteria/index.html",
+  category: "html5"
+}, {
+  name: "Fancy Pants Adventure",
+  url: "https://3kh0s.github.io/games/fancypantsadventure2/index.html",
+  category: "html5"
+}, {
+  name: "Bad Ice Cream 2",
+  url: "https://3kh0s.github.io/games/badicecream2/index.html",
+  category: "html5"
+}, {
+  name: "Tomb of The Mask",
+  url: "https://mountjustin.github.io/tombofthemask.html",
+  category: "html5"
+}, {
+  name: "Ninja vs Evil Corp",
+  url: "https://mountjustin.github.io/ninjavsevilcorp.html",
+  category: "html5"
+}, {
+  name: "Bad Ice Cream 3",
+  url: "https://3kh0s.github.io/games/badicecream3/index.html",
+  category: "html5"
+}, {
+  name: "Stumble Guys",
+  url: "https://mountjustin.github.io/stumbleguys.html",
+  category: "html5"
+}, {
+  name: "Johnny Upgrade",
+  url: "https://mountjustin.github.io/johnnyupgrade.html",
+  category: "html5"
+}, {
+  name: "Offline Paradise",
+  url: "https://mountjustin.github.io/offlineparadise.html",
+  category: "html5"
+}, {
+  name: "Elastic Man",
+  url: "https://mountjustin.github.io/elasticman.html",
+  category: "html5"
+}, {
+  name: "Get away shootout",
+  url: "https://3kh0s.github.io/games/getawayshootout/index.html",
+  category: "html5"
+}, {
+  name: "Just One Boss",
+  url: "https://mountjustin.github.io/justoneboss.html",
+  category: "html5"
+}, {
+  name: "Papa’s Cheeseria",
+  url: "https://3kh0s.github.io/games/papascheeseria/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Cupcakeria",
+  url: "https://3kh0s.github.io/games/papascupcakeria/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Bakeria",
+  url: "https://3kh0s.github.io/games/papasbakeria/index.html",
+  category: "html5"
+}, {
+  name: "DogeMiner",
+  url: "https://infmapi.github.io/PureProx.github.io/DM.html",
+  category: "html5"
+}, {
+  name: "Craft Mine",
+  url: "https://infmapi.github.io/PureProx.github.io/CM.html",
+  category: "html5"
+}, {
+  name: "Core Ball",
+  url: "https://infmapi.github.io/PureProx.github.io/CB.html",
+  category: "html5"
+}, {
+  name: "Papa’s Pasteria",
+  url: "https://3kh0s.github.io/games/papaspastaria/index.html",
+  category: "html5"
+}, {
+  name: "Fruit Ninja",
+  url: "https://infmapi.github.io/PureProx.github.io/FN.html",
+  category: "html5"
+}, {
+  name: "Cannon Basketball",
+  url: "https://infmapi.github.io/PureProx.github.io/CNB.html",
+  category: "html5"
+}, {
+  name: "Tanuki Sunset",
+  url: "https://infmapi.github.io/PureProx.github.io/TS.html",
+  category: "html5"
+}, {
+  name: "Tiny Fishing",
+  url: "https://infmapi.github.io/PureProx.github.io/TF.html",
+  category: "html5"
+}, {
+  name: "Skibidi 1v100",
+  url: "https://3kh0s.github.io/games/skibidi1v100/index.html",
+  category: "html5"
+}, {
+  name: "Skibid Toilet attack",
+  url: "https://3kh0s.github.io/games/skibiditoiletattack/index.html",
+  category: "html5"
+}, {
+  name: "Moto X3M Pool ",
+  url: "https://3kh0s.github.io/games/motox3mpool/index.html",
+  category: "html5"
+}, {
+  name: "Paper io 3D",
+  url: "https://3kh0s.github.io/games/paperio3d/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Tacomia",
+  url: "https://3kh0s.github.io/games/papastacomia/index.html",
+  category: "html5"
+}, {
+  name: "Knife Hit",
+  url: "https://3kh0s.github.io/games/knifehit/index.html",
+  category: "html5"
+}, {
+  name: "Cube field",
+  url: "https://3kh0s.github.io/games/cubefield/index.html",
+  category: "html5"
+}, {
+  name: "Friday Night Funkin: Mid Fight",
+  url: "https://3kh0s.github.io/games/fnfmidfight/index.html",
+  category: "html5"
+}, {
+  name: "Pizza Tower",
+  url: "https://3kh0s.github.io/games/pizzatower/index.html",
+  category: "html5"
+}, {
+  name: "Hole io",
+  url: "https://3kh0s.github.io/games/holeio/index.html",
+  category: "html5"
+}, {
+  name: "Crimson Fantasia",
+  url: "https://3kh0s.github.io/games/crimsonfantasia/index.html",
+  category: "html5"
+}, {
+  name: "Grand Theft Grotto",
+  url: "https://3kh0s.github.io/games/grandtheftgrotto/index.html",
+  category: "html5"
+}, {
+  name: "Drift Mania",
+  url: "https://3kh0s.github.io/games/driftmania/index.html",
+  category: "html5"
+}, {
+  name: "Rise Higher",
+  url: "https://3kh0s.github.io/games/risehigher/index.html",
+  category: "html5"
+}, {
+  name: "Burrito Bison",
+  url: "https://3kh0s.github.io/games/burritobison/index.html",
+  category: "html5"
+}, {
+  name: "Pool",
+  url: "https://3kh0s.github.io/games/pool/index.html",
+  category: "html5"
+}, {
+  name: "Red Ball",
+  url: "https://3kh0s.github.io/games/redball1/index.html",
+  category: "html5"
+}, {
+  name: "Red Ball 3",
+  url: "https://3kh0s.github.io/games/redball3/index.html",
+  category: "html5"
+}, {
+  name: "Red Ball 4",
+  url: "https://3kh0s.github.io/games/redball4/index.html",
+  category: "html5"
+}, {
+  name: "Red Ball 4 volume 2",
+  url: "https://3kh0s.github.io/games/redballv2/index.html",
+  category: "html5"
+}, {
+  name: "Red Ball 4 volume 3",
+  url: "https://3kh0s.github.io/games/redballv3/index.html",
+  category: "html5"
+}, {
+  name: "Backrooms 2D",
+  url: "https://3kh0s.github.io/games/backrooms2d/index.html",
+  category: "html5"
+}, {
+  name: "Run 3 Plus",
+  url: "https://3kh0s.github.io/games/run3plus/index.html",
+  category: "html5"
+}, {
+  name: "Slope City",
+  url: "https://3kh0s.github.io/games/slopecity/index.html",
+  category: "html5"
+}, {
+  name: "State io",
+  url: "https://3kh0s.github.io/games/stateio/index.html",
+  category: "html5"
+}, {
+  name: "Crazy tunnel 3D",
+  url: "https://3kh0s.github.io/games/crazytunnel3d/index.html",
+  category: "html5"
+}, {
+  name: "Gold Digger Frvr",
+  url: "https://3kh0s.github.io/games/golddiggerfrvr/index.html",
+  category: "html5"
+}, {
+  name: "Hex GL",
+  url: "https://3kh0s.github.io/games/hexgl/index.html",
+  category: "html5"
+}, {
+  name: "House of Hazards",
+  url: "https://3kh0s.github.io/games/houseofhazards/index.html",
+  category: "html5"
+}, {
+  name: "PickCrafter",
+  url: "https://3kh0s.github.io/games/pickcrafter/index.html",
+  category: "html5"
+}, {
+  name: "xx142-b2.exe",
+  url: "https://3kh0s.github.io/games/xx142-b2.exe/index.html",
+  category: "html5"
+}, {
+  name: "Canopy",
+  url: "https://3kh0s.github.io/games/canopy/index.html",
+  category: "html5"
+}, {
+  name: "Chisel",
+  url: "https://3kh0s.github.io/games/chisel/index.html",
+  category: "html5"
+}, {
+  name: "Chisel 2",
+  url: "https://3kh0s.github.io/games/chisel2/index.html"
+}, {
+  name: "Underrun",
+  url: "https://orcatech2711.github.io/nano/games/underrun/index.html",
+  category: "html5"
+}, {
+  name: "Getting Over It",
+  url: "https://orcatech2711.github.io/nano/games/gettingoverit/index.html",
+  category: "html5"
+}, {
+  name: "There Is No Game",
+  url: "https://orcatech2711.github.io/nano/games/thereisnogame/index.html",
+  category: "html5"
+}, {
+  name: "Death Run 3D",
+  url: "https://orcatech2711.github.io/nano/games/deathrun3d/game.html",
+  category: "html5"
+}, {
+  name: "CNodes",
+  url: "https://abagames.github.io/crisp-game-lib-games/?cnodes",
+  category: "html5"
+}, {
+  name: "BBlast",
+  url: "https://abagames.github.io/crisp-game-lib-games/?bblast",
+  category: "html5"
+}, {
+  name: "Pairs Drop",
+  url: "https://abagames.github.io/crisp-game-lib-games/?pairsdrop",
+  category: "html5"
+}, {
+  name: "From Two Sides",
+  url: "https://abagames.github.io/crisp-game-lib-games/?fromtwosides",
+  category: "html5"
+}, {
+  name: "Pillars 3D",
+  url: "https://abagames.github.io/crisp-game-lib-11-games/?pillars3d",
+  category: "html5"
+}, {
+  name: "Card Q",
+  url: "https://abagames.github.io/crisp-game-lib-11-games/?cardq",
+  category: "html5"
+}, {
+  name: "Hakosan",
+  url: "https://abagames.github.io/hakosan/build/?s=10",
+  category: "html5"
+}, {
+  name: "Future Wake",
+  url: "https://abagames.github.io/crisp-game-lib-games/?futurewake",
+  category: "html5"
+}, {
+  name: "Press M",
+  url: "https://abagames.github.io/crisp-game-lib-games/?pressm",
+  category: "html5"
+}, {
+  name: "Crossline",
+  url: "https://abagames.github.io/crisp-game-lib-games/?crossline",
+  category: "html5"
+}, {
+  name: "Docking",
+  url: "https://abagames.github.io/simple-game-actor/samples/docking/index.html",
+  category: "html5"
+}, {
+  name: "Thrust LR",
+  url: "https://abagames.github.io/crisp-game-lib-games/?thrustlr",
+  category: "html5"
+}, {
+  name: "Neon Pollinator",
+  url: "https://abagames.github.io/claude-one-button-game-creation/?neonpollinator",
+  category: "html5"
+}, {
+  name: "Flipo",
+  url: "https://abagames.github.io/crisp-game-lib-11-games/?flipo",
+  category: "html5"
+}, {
+  name: "Pizza Arrow",
+  url: "https://abagames.github.io/crisp-game-lib-games/?pizzaarrow",
+  category: "html5"
+}, {
+  name: "60s BR Flash",
+  url: "https://reider71164.github.io/60sbr-flash",
+  category: "html5"
+}, {
+  name: "Funny Shooter 2",
+  url: "https://reider71164.github.io/funny-shooter/",
+  category: "html5"
+}, {
+  name: "Super Smash",
+  url: "https://r8r7.github.io/jonathanrivera/games/SuperSmash/",
+  category: "html5"
+}, {
+  name: "Stickman Battle",
+  url: "https://r8r7.github.io/jonathanrivera/games/stickmanbattle/g",
+  category: "html5"
+}, {
+  name: "Achievement Unlocked",
+  url: "https://schoolness.onrender.com/projects/achievementunlocked/index.html",
+  category: "html5"
+}, {
+  name: "Ages of Conflict",
+  url: "https://schoolness.onrender.com/projects/ages-of-conflict/index.html",
+  category: "html5"
+}, {
+  name: "Alien Hominid",
+  url: "https://schoolness.onrender.com/projects/alienhominid/index.html",
+  category: "html5"
+}, {
+  name: "Aquapark Slides",
+  url: "https://schoolness.onrender.com/projects/aquapark-slides/index.html",
+  category: "html5"
+}, {
+  name: "Battle for Gondor",
+  url: "https://schoolness.onrender.com/projects/battleforgondor/index.html",
+  category: "html5"
+}, {
+  name: "Black Hole Square",
+  url: "https://schoolness.onrender.com/projects/blacholesquare/index.html",
+  category: "html5"
+}, {
+  name: "Cannon Basketball 4",
+  url: "https://schoolness.onrender.com/projects/cannon-basketball-4/index.html",
+  category: "html5"
+}, {
+  name: "Cars Simulator",
+  url: "https://schoolness.onrender.com/projects/cars-simulator/index.html",
+  category: "html5"
+}, {
+  name: "Toss the Turtle",
+  url: "https://schoolness.onrender.com/projects/tosstheturtle/index.html",
+  category: "html5"
+}, {
+  name: "Slime Rush TD",
+  url: "https://schoolness.onrender.com/projects/slime-rush-td/index.html",
+  category: "html5"
+}, {
+  name: "Station 141",
+  url: "https://schoolness.onrender.com/projects/station-141/index.html",
+  category: "html5"
+}, {
+  name: "Sky Car Stunt",
+  url: "https://schoolness.onrender.com/projects/sky-car-stunt/index.html",
+  category: "html5"
+}, {
+  name: "Frying Nemo",
+  url: "https://schoolness.onrender.com/projects/frying-nemo/index.html",
+  category: "html5"
+}, {
+  name: "Interactive Buddy",
+  url: "https://schoolness.onrender.com/projects/interactivebuddy/index.html",
+  category: "html5"
+}, {
+  name: "George and the Printer",
+  url: "https://schoolness.onrender.com/projects/georgeandtheprinter/index.html",
+  category: "html5"
+}, {
+  name: "Good Night",
+  url: "https://schoolness.onrender.com/projects/goodnight/index.html",
+  category: "html5"
+}, {
+  name: "Ditto",
+  url: "https://3kh0s.github.io/games/ditto/index.html",
+  category: "html5"
+}, {
+  name: "Geometry Dash Lite",
+  url: "https://3kh0s.github.io/games/gdlite/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Pizzeria",
+  url: "https://3kh0s.github.io/games/papaspizzaria/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Burgeria",
+  url: "https://3kh0s.github.io/games/papasburgeria/index.html",
+  category: "html5"
+}, {
+  name: "Crossy Road",
+  url: "https://3kh0s.github.io/games/crossy/index.html",
+  category: "html5"
+}, {
+  name: "Chrome Dino Game",
+  url: "https://3kh0s.github.io/games/dinogame/index.html",
+  category: "html5"
+}, {
+  name: "Doodle Jump",
+  url: "https://3kh0s.github.io/games/doodlejump/index.html",
+  category: "html5"
+}, {
+  name: "Fancy Pants Adventure",
+  url: "https://3kh0s.github.io/games/fancypantsadventure/index.html",
+  category: "html5"
+}, {
+  name: "Happy Wheels",
+  url: "https://3kh0s.github.io/games/happywheels/index.html",
+  category: "html5"
+}, {
+  name: "Papa’s Hot Doggeria",
+  url: "https://3kh0s.github.io/games/papashotdoggeria/index.html",
+  category: "html5"
+}, {
+  name: "The Binding of Isaac",
+  url: "https://3kh0s.github.io/games/thebindingofisaac/index.html",
+  category: "html5"
+}, {
+  name: "Townscaper",
+  url: "https://3kh0s.github.io/games/townscaper/index.html",
+  category: "html5"
+}, {
+  name: "Theme Hotel",
+  url: "https://3kh0s.github.io/games/themehotel/index.html",
+  category: "html5"
+}, {
+  name: "Survev io",
+  url: "https://zurviv.io",
+  category: "html5"
+}
+];
+
+const gameImages = {
+  'Advance Wars': 'https://www.godisageek.com/wp-content/uploads/Advance-Wars-12-Re-boot-Camp-review.jpg',
+  'Advance Wars 2': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_AdvanceWars2BlackHoleRising_image1600w.jpg',
+  'Aladdin': 'https://www.gamebrew.org/images/8/8a/Aladdingba02.png',
+  'Pokemon Emerald': 'https://m.media-amazon.com/images/M/MV5BOWVmM2RjNDQtNzc2MS00MDcwLWE2MjItMGZkMDA4YTY1YWM3XkEyXkFqcGc@._V1_.jpg',
+  'Super Mario 64': 'https://i.ytimg.com/vi/4BhgVcTgJes/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDDQPqm28_cNtcHyrpsXW14ZDEE5g',
+  'Sonic Advance': 'https://retrocdn.net/images/4/48/SonicAdvance_title.png',
+  'Bomberman Max 2 Blue': 'https://retroislandny.com/cdn/shop/files/bomberman-max-2-blue-jp-gameboy-advance-122356.jpg?v=1723132095',
+  'Bomberman Tournament': 'https://cdn2.steamgriddb.com/thumb/3e3564c06601553aecd5e8982e49c831.jpg',
+  'Bubble Bobble': 'https://cdn.gamerbraves.com/2020/07/bubble-bobble-classic.jpg',
+  'Mario Golf': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_MarioGolfAdvanceTour_image1600w.jpg',
+  'Mario Kart': 'https://onecontrollerport.com/wp-content/uploads/2016/01/Mario-Kart-Super-Circuit-Title-Screen.jpg',
+  'Mario Party Advance': 'https://m.media-amazon.com/images/M/MV5BNDE2ZWM5MTQtYTBjMi00MjQ4LWI3ZjEtZDIzNjc3NzJiN2QwXkEyXkFqcGc@._V1_.jpg',
+  'Mario Pinball': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_SuperMarioBall.jpg',
+  'Mario Tennis': 'https://i.ebayimg.com/images/g/nIQAAOSwPEBgMWjr/s-l400.jpg',
+  'Mega Man & Bass': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_MegamanAndBass_image1600w.jpg',
+  'Final Fantasy IV': 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto/dpr_2.0/ncom/en_US/games/switch/m/minecraft-switch/hero',
+  'Final Fantasy VI': 'https://i.redd.it/5lor7ki5a6vd1.jpeg',
+  'Fire Emblem': 'https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000058802/88b8db494399e659522af36331b7f588439bc4312af5c0ee57035c063651ab4a',
+  'Kirby & The Amazing Mirror': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_KirbyAndTheAmazingMirror_image1600w.jpg',
+  'Kirby: Nightmare in Dream Land': 'https://eta.vgmtreasurechest.com/soundtracks/kirby-nightmare-in-dreamland-re-engineered-soundtrack-2002/Cover.png',
+  'Mario & Luigi: Superstar Saga': 'https://i0.wp.com/615film.com//wp-content/uploads/2017/10/Feature-Image.jpg?ssl=1',
+  'Sonic Advance 2': 'https://i.ytimg.com/vi/NCIBDLE8jiM/maxresdefault.jpg',
+  'Super Mario Advance': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_SuperMarioAdvance_image1600w.jpg',
+  'Super Mario Advance 2': 'https://retroislandny.com/cdn/shop/files/super-mario-advance-2-jp-gameboy-advance-753813.jpg?v=1729338105',
+  'Super Mario Advance 3': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_YoshisIslandSuperMarioAdvance3_image1600w.jpg',
+  'Super Mario Advance 4': 'https://i.ytimg.com/vi/T21-E9GfHkI/maxresdefault.jpg',
+  'Wario Land 4': 'https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/18aaed82_9f39_41e6_a81c_7c8ded758fbf.jpeg',
+  'WarioWare Inc': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzi3_EnMO2yvOVfTAPRgc2TVOOGnc9SCf8Q&s',
+  'Zelda: The Minish Cap': 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_TheLegendOfZeldaTheMinishCap_image1600w.jpg',
+  'Minecraft 1.8': 'https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/ncom/en_US/games/switch/m/minecraft-switch/hero',
+  'Super Smash Bros': 'https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000012332/ac4d1fc9d6aac13bf3ca9d75cdb35293a54f7afd2af5c0ee57035c063651ab4a91d58b26f8',
+  'Geometry Dash Lite': 'https://play-lh.googleusercontent.com/WDhVsN-2F_TFD_wAVVQfpWNT4yPee4EGxI9FyPLs4CTABfQBzKiM11ItBxANQW7FBsk=w526-h296-rw',
+  'Papa\'s Pizzeria': 'https://i.flipline.com/gamefiles/papasgames/screenshots/papa\'s%20pizzeria/pfp_screenshot02.jpg',
+  'Papa\'s Burgeria': 'https://images.crazygames.com/papasburgeria.png?auto=format,compress&q=75&cs=strip',
+  'Crossy Road': 'https://play-lh.googleusercontent.com/2yH_JEwxM2qGBOrQsbJI7NycHCQhYGUsyCx1L16lQcSXuBQD4n0AVDUrKOe0GwsC5A=w526-h296-rw',
+  'Chrome Dino Game': 'https://techcrunch.com/wp-content/uploads/2018/09/chrome-dinosaur-game.png',
+  'Doodle Jump': 'https://play-lh.googleusercontent.com/V-lvUzA5kK0Xw3wdg8Vc_wy57OQ9ep3CsFjDV1oTtxvAkHzQe9gZQoGXKF0dJxwF9Ts',
+  'Fancy Pants Adventure': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/9ca27af60c40e526427579fbc5cfb403.png',
+  'Happy Wheels': 'https://i.ytimg.com/vi/p3RwX06wcZY/maxresdefault.jpg',
+  'Papa\'s Hot Doggeria': 'https://i.flipline.com/gamefiles/papasgames/screenshots/papa\'s%20hot%20doggeria/web/screenshot_06.jpg',
+  'The Binding of Isaac': 'https://cdn.akamai.steamstatic.com/steam/apps/113200/header.jpg',
+  'Townscaper': 'https://assets-prd.ignimgs.com/2021/08/25/townscaper-button-1629927743612.jpg',
+  'Theme Hotel': 'https://www.kongregate.com/games/AndreyGrunt/theme-hotel',
+  'Among Us': 'https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec'
+};
+
+const slideImages = {
+  sonic: 'https://www.rocketleague.com/images/keyart/rl_evergreen.jpg',
+  minecraft: 'https://i.wpimg.pl/2560x1440/filerepo.grupawp.pl/api/v1/display/embed/2f54e5ab-3bce-47dc-88e6-b2a4bcd40daf',
+  superstar: 'https://i0.wp.com/615film.com//wp-content/uploads/2017/10/Feature-Image.jpg?ssl=1',
+  ff6: 'https://i.redd.it/5lor7ki5a6vd1.jpeg',
+  fireemblem: 'https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000058802/88b8db494399e659522af36331b7f588439bc4312af5c0ee57035c063651ab4a'
+};
+
+function initGameGrid() {
+  const gameGrid = document.getElementById('gameGrid');
+  gameGrid.innerHTML = '';
+
+  // Create a map to track games by name
+  const uniqueGames = new Map();
+
+  // Only keep the first occurrence of each game name
+  links.forEach(game => {
+    if (!uniqueGames.has(game.name)) {
+      uniqueGames.set(game.name, game);
+    }
+  });
+
+  const excludedGames = [
+    'Super Smash Bros',
+    'Geometry Dash Lite',
+    'Papa\'s Pizzeria',
+    'Papa\'s Burgeria',
+    'Crossy Road',
+    'Chrome Dino Game',
+    'Doodle Jump',
+    'Fancy Pants Adventure',
+    'Happy Wheels',
+    'Papa\'s Hot Doggeria',
+    'The Binding of Isaac',
+    'Townscaper',
+    'Theme Hotel',
+    'Among Us'
+  ];
+
+  const gamesWithImages = Array.from(uniqueGames.values())
+    .filter(game => gameImages[game.name] && !excludedGames.includes(game.name));
+
+  gamesWithImages.forEach(game => {
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    card.onclick = () => playGame(game.url, game.name);
+
+    let imageUrl = gameImages[game.name];
+    card.style.backgroundImage = `url('${imageUrl}')`;
+    card.style.backgroundSize = "cover";
+    card.style.backgroundPosition = "center";
+
+    card.innerHTML = `
+      <div class="game-card-title">${game.name}</div>
+    `;
+
+    gameGrid.appendChild(card);
+  });
+}
+
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.style.left = Math.random() * 100 + 'vw';
+  snowflake.style.opacity = Math.random();
+  snowflake.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
+  document.body.appendChild(snowflake);
+  snowflake.addEventListener('animationend', () => {
+    snowflake.remove();
+  });
+}
+
+function search() {
+  const query = document.getElementById('searchBar').value.toLowerCase();
+  const resultsList = document.getElementById('resultsList');
+  const gameCounter = document.getElementById('gameCounter');
+
+  if (query) {
+    resultsList.classList.add('searching');
+
+    // Create map of unique games
+    const uniqueGames = new Map();
+    links.forEach(game => {
+      if (!uniqueGames.has(game.name)) {
+        uniqueGames.set(game.name, game);
+      }
+    });
+
+    const filteredLinks = Array.from(uniqueGames.values())
+      .filter(link => link.name.toLowerCase().includes(query))
+      .slice(0, 5);
+
+    resultsList.innerHTML = '';
+    filteredLinks.forEach((link, index) => {
+      resultsList.innerHTML += `
+        <li style="animation-delay: ${index * 0.05}s">
+          <a href="#" onclick="playGame('${link.url}', '${link.name}'); return false;">
+            ${link.name}
+          </a>
+        </li>
+      `;
+    });
+
+    gameCounter.innerHTML = `Showing ${filteredLinks.length} of ${uniqueGames.size} games`;
+  } else {
+    resultsList.classList.remove('searching');
+    resultsList.innerHTML = '';
+    gameCounter.innerHTML = '';
+  }
+
+  initGameGrid();
+}
+
+function closePopup() {
+  const gamePopup = document.getElementById('gamePopup');
+  gamePopup.style.display = 'none';
+}
+
+function updateStats() {
+  // Create map of unique games
+  const uniqueGames = new Map();
+  links.forEach(game => {
+    if (!uniqueGames.has(game.name)) {
+      uniqueGames.set(game.name, game);
+    }
+  });
+
+  const uniqueArray = Array.from(uniqueGames.values());
+  const gbGames = uniqueArray.filter(link => link.category === 'gb').length;
+  const html5Games = uniqueArray.filter(link => link.category === 'html5').length;
+  document.getElementById('totalGames').textContent = uniqueGames.size;
+  document.getElementById('gbCount').textContent = gbGames;
+  document.getElementById('gbcCount').textContent = html5Games;
+  document.querySelector('.stat-box:last-child .stat-label').textContent = 'HTML5 Games';
+}
+
+function closeGame() {
+  const container = document.getElementById('gameContainer');
+  const frame = document.getElementById('gameFrame');
+  container.style.display = 'none';
+  frame.src = '';
+  document.body.style.overflow = 'auto';
+}
+
+function toggleFullscreen() {
+  const gameFrame = document.getElementById('gameFrame');
+  if (!document.fullscreenElement) {
+    if (gameFrame.requestFullscreen) {
+      gameFrame.requestFullscreen();
+    } else if (gameFrame.webkitRequestFullscreen) {
+      gameFrame.webkitRequestFullscreen();
+    } else if (gameFrame.msRequestFullscreen) {
+      gameFrame.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  }
+}
+
+function playGame(url, name) {
+  const container = document.getElementById('gameContainer');
+  const frame = document.getElementById('gameFrame');
+  const title = document.getElementById('gameTitle');
+  title.textContent = name;
+  const loadingScreen = document.getElementById('loadingScreen');
+  loadingScreen.classList.remove('fade-out');
+  loadingScreen.style.display = 'flex';
+  frame.onload = function () {
+    loadingScreen.classList.add('fade-out');
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 500);
+  };
+  frame.src = url;
+  container.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function initSlideshow() {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach(slide => {
+    const imageKey = slide.dataset.image;
+    slide.style.backgroundImage = `url('${slideImages[imageKey]}')`;
+  });
+
+  let currentSlide = 0;
+  slides[currentSlide].classList.add('active');
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 10000);
+}
+
+function showAllGames() {
+  const container = document.getElementById('allGamesContainer');
+  const list = document.getElementById('allGamesList');
+
+  // Create map of unique games
+  const uniqueGames = new Map();
+  links.forEach(game => {
+    if (!uniqueGames.has(game.name)) {
+      uniqueGames.set(game.name, game);
+    }
+  });
+
+  list.innerHTML = '';
+  Array.from(uniqueGames.values())
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .forEach(game => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <a href="#" onclick="playGame('${game.url}', '${game.name}'); closeAllGames(); return false;">
+          ${game.name}
+        </a>
+      `;
+      list.appendChild(li);
+    });
+
+  container.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAllGames() {
+  const container = document.getElementById('allGamesContainer');
+  container.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function toggleThemeSidebar() {
+  const sidebar = document.getElementById('themeSidebar');
+  const overlay = document.getElementById('themeOverlay');
+
+  if (sidebar.classList.contains('open')) {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  } else {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function setTheme(theme) {
+  const root = document.documentElement;
+
+  const themes = {
+    default: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    original: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/97585049-4b82-4e0c-a211-4d76ee546fd7/dgemj0h-e489d0d5-580c-4709-b183-fa4ec649cac3.png/v1/fill/w_1280,h_720/opera_gx_dark_frutti_di_mare__1080p__by_finity2002_dgemj0h-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvOTc1ODUwNDktNGI4Mi00ZTBjLWEyMTEtNGQ3NmVlNTQ2ZmQ3XC9kZ2VtajBoLWU0ODlkMGQ1LTU4MGMtNDcwOS1iMTgzLWZhNGVjNjQ5Y2FjMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.a5RfeSPsdIoaOAUfEAdSo0jx8jeXlc7cH2KBnaWZESE)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    red: {
+      primary: '#f44336',
+      'primary-dark': '#d32f2f',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#e57373'
+    },
+    blue: {
+      primary: '#2196F3',
+      'primary-dark': '#1976D2',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#64B5F6'
+    },
+    purple: {
+      primary: '#9C27B0',
+      'primary-dark': '#7B1FA2',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#BA68C8'
+    },
+    orange: {
+      primary: '#FF9800',
+      'primary-dark': '#F57C00',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#FFB74D'
+    },
+    pink: {
+      primary: '#E91E63',
+      'primary-dark': '#C2185B',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#F06292'
+    },
+    nightcafe: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://creator.nightcafe.studio/jobs/ghyPQKeNKIfHjdwy6XEj/ghyPQKeNKIfHjdwy6XEj--1--cl5ux.jpg)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    pixelart: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://w0.peakpx.com/wallpaper/1009/34/HD-wallpaper-cool-pixel-art-background-ultra-games-other-games-background-cool-pixel-gameing-playhard.jpg)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    animecity: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://img.freepik.com/free-photo/illustration-anime-city_23-2151779669.jpg)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    stardewvalley: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://www.pixelcrib.com.au/cdn/shop/collections/Stardew_Valley_Piano_Collections_Compact_Disc_800x-2.jpg?v=1648169464)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    },
+    zelda: {
+      primary: '#4CAF50',
+      'primary-dark': '#45a049',
+      background: 'url(https://wallpapers.com/images/featured/zelda-rkp03okh2d43ik06.jpg)',
+      surface: '#2a2a2a',
+      text: '#fff',
+      accent: '#81C784'
+    }
+  };
+
+  const selectedTheme = themes[theme];
+
+  if (selectedTheme) {
+    for (const [property, value] of Object.entries(selectedTheme)) {
+      if (property === 'background' && value.startsWith('url')) {
+        document.body.style.backgroundImage = value;
+        document.body.style.backgroundColor = 'transparent';
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundAttachment = 'fixed';
+        localStorage.setItem('background', value);
+      } else {
+        root.style.setProperty(`--${property}`, value);
+      }
+    }
+
+    // Only update localStorage theme if it's a color theme (not a background theme)
+    if (!selectedTheme.background) {
+      localStorage.setItem('theme', theme);
+    }
+  }
+}
+
+function setCustomBackground() {
+  const input = document.getElementById('backgroundInput');
+  const error = document.getElementById('backgroundError');
+  const url = input.value.trim();
+
+  // Create a temporary image to verify the URL
+  const img = new Image();
+  img.onerror = () => {
+    error.style.display = 'block';
+    setTimeout(() => {
+      error.style.display = 'none';
+    }, 3000);
+  };
+
+  img.onload = () => {
+    document.body.style.backgroundImage = `url('${url}')`;
+    document.body.style.backgroundColor = 'transparent';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed';
+    localStorage.setItem('customBackground', url);
+    input.value = '';
+    error.style.display = 'none';
+  };
+
+  img.src = url;
+}
+
+function exportTheme() {
+  // Get current theme settings
+  const themeSettings = {
+    backgroundColor: document.body.style.backgroundImage,
+    customBackground: localStorage.getItem('customBackground'),
+    theme: localStorage.getItem('theme'),
+    background: localStorage.getItem('background')
+  };
+
+  // Create blob and download
+  const blob = new Blob([JSON.stringify(themeSettings, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'kermit-web-theme.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importTheme(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      try {
+        const settings = JSON.parse(e.target.result);
+
+        // Apply background if it exists
+        if (settings.backgroundColor) {
+          document.body.style.backgroundImage = settings.backgroundColor;
+          document.body.style.backgroundColor = 'transparent';
+          document.body.style.backgroundSize = 'cover';
+          document.body.style.backgroundPosition = 'center';
+          document.body.style.backgroundAttachment = 'fixed';
+        }
+
+        // Apply custom background if it exists
+        if (settings.customBackground) {
+          localStorage.setItem('customBackground', settings.customBackground);
+        }
+
+        // Apply theme if it exists
+        if (settings.theme) {
+          localStorage.setItem('theme', settings.theme);
+          setTheme(settings.theme);
+        }
+
+        // Apply background setting if it exists
+        if (settings.background) {
+          localStorage.setItem('background', settings.background);
+        }
+
+        // Show success message
+        const message = document.createElement('div');
+        message.textContent = 'Theme imported successfully!';
+        message.style.position = 'fixed';
+        message.style.top = '20px';
+        message.style.left = '50%';
+        message.style.transform = 'translateX(-50%)';
+        message.style.background = 'var(--primary)';
+        message.style.color = 'white';
+        message.style.padding = '10px 20px';
+        message.style.borderRadius = '5px';
+        message.style.zIndex = '9999';
+        message.style.fontFamily = "'VT323', monospace";
+        document.body.appendChild(message);
+
+        setTimeout(() => {
+          message.remove();
+        }, 3000);
+
+      } catch (error) {
+        console.error('Error importing theme:', error);
+        const message = document.createElement('div');
+        message.textContent = 'Error importing theme file!';
+        message.style.position = 'fixed';
+        message.style.top = '20px';
+        message.style.left = '50%';
+        message.style.transform = 'translateX(-50%)';
+        message.style.background = '#f44336';
+        message.style.color = 'white';
+        message.style.padding = '10px 20px';
+        message.style.borderRadius = '5px';
+        message.style.zIndex = '9999';
+        message.style.fontFamily = "'VT323', monospace";
+        document.body.appendChild(message);
+
+        setTimeout(() => {
+          message.remove();
+        }, 3000);
+      }
+    };
+    reader.readAsText(file);
+  }
+  // Reset file input
+  event.target.value = '';
+}
+
+function downloadCode() {
+  const htmlContent = document.documentElement.outerHTML;
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'index.html';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  alert('The website code has been downloaded as index.html. Please note that any linked resources may not be included and you might need to adjust paths for local usage.');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const savedBackground = localStorage.getItem('background');
+
+  if (savedTheme) {
+    setTheme(savedTheme);
+  }
+
+  if (savedBackground) {
+    document.body.style.backgroundImage = savedBackground;
+    document.body.style.backgroundColor = 'transparent';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed';
+  }
+});
+
+window.onload = () => {
+  document.querySelector('.logo').style.opacity = '0';
+  setTimeout(() => {
+    document.querySelector('.logo').style.transition = 'opacity 0.5s';
+    document.querySelector('.logo').style.opacity = '1';
+  }, 500);
+  setInterval(createSnowflake, 100);
+  const loadingScreen = document.getElementById('loadingScreen');
+  setTimeout(() => {
+    updateStats();
+    search();
+    loadingScreen.classList.add('fade-out');
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 500);
+    initGameGrid();
+    initSlideshow();
+  }, 1500);
+  // Restore custom background if it exists
+  const savedBackground = localStorage.getItem('customBackground');
+  if (savedBackground) {
+    document.body.style.backgroundImage = `url('${savedBackground}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed';
+  }
+};
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeGame();
+    closeAllGames();
+    const sidebar = document.getElementById('themeSidebar');
+    const overlay = document.getElementById('themeOverlay');
+    if (sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
+  </script>
+
+<div class="snowflake" style="left: 90.4442vw; opacity: 0.476527; animation: 2.9022s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 96.5623vw; opacity: 0.758427; animation: 3.68828s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 78.7551vw; opacity: 0.682398; animation: 2.82876s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 35.7866vw; opacity: 0.00154306; animation: 3.85854s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 39.8314vw; opacity: 0.869246; animation: 2.33949s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 30.8319vw; opacity: 0.905383; animation: 4.88945s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 33.1838vw; opacity: 0.590653; animation: 3.60637s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 33.8992vw; opacity: 0.720429; animation: 4.87844s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 78.4765vw; opacity: 0.0420145; animation: 3.15495s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 52.9839vw; opacity: 0.131572; animation: 2.06529s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 50.0675vw; opacity: 0.056886; animation: 2.3244s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 79.6177vw; opacity: 0.218737; animation: 3.593s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 81.6825vw; opacity: 0.460393; animation: 3.06009s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 38.0158vw; opacity: 0.434194; animation: 2.93089s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 49.808vw; opacity: 0.978473; animation: 4.34894s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 74.3785vw; opacity: 0.411565; animation: 2.22791s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 99.8369vw; opacity: 0.155234; animation: 3.09342s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 54.6129vw; opacity: 0.117768; animation: 4.04098s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 18.676vw; opacity: 0.32086; animation: 4.67942s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 90.0837vw; opacity: 0.589546; animation: 4.85326s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 57.1664vw; opacity: 0.560525; animation: 2.06748s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 76.9548vw; opacity: 0.0667527; animation: 3.89744s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 73.9139vw; opacity: 0.913015; animation: 4.08277s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 16.2767vw; opacity: 0.639006; animation: 4.17791s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 2.89644vw; opacity: 0.573856; animation: 2.76153s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 19.2947vw; opacity: 0.877002; animation: 2.37696s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 24.1872vw; opacity: 0.721404; animation: 2.77367s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 91.0781vw; opacity: 0.860334; animation: 4.63145s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 16.4309vw; opacity: 0.963677; animation: 2.62218s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 75.2692vw; opacity: 0.198723; animation: 3.91591s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 13.1555vw; opacity: 0.100594; animation: 2.2036s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 73.6091vw; opacity: 0.41304; animation: 4.17894s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 76.0758vw; opacity: 0.749274; animation: 3.50348s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 20.1161vw; opacity: 0.717641; animation: 2.6135s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 3.41491vw; opacity: 0.353496; animation: 3.04164s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 83.9724vw; opacity: 0.812791; animation: 4.33401s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 47.3186vw; opacity: 0.368833; animation: 2.60695s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 26.5291vw; opacity: 0.346191; animation: 4.08574s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 15.2354vw; opacity: 0.369838; animation: 4.15739s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 87.6175vw; opacity: 0.22298; animation: 2.35563s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 55.8739vw; opacity: 0.196909; animation: 3.37007s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 32.8206vw; opacity: 0.552542; animation: 2.46243s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 59.6451vw; opacity: 0.739647; animation: 3.39329s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 99.3335vw; opacity: 0.640472; animation: 3.93072s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 4.06828vw; opacity: 0.516328; animation: 3.67676s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 21.2256vw; opacity: 0.325777; animation: 4.0504s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 24.0915vw; opacity: 0.98676; animation: 3.55335s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 41.6809vw; opacity: 0.0743253; animation: 3.30481s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 57.6331vw; opacity: 0.516281; animation: 4.40916s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 91.4059vw; opacity: 0.548811; animation: 4.80868s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 53.2748vw; opacity: 0.903563; animation: 2.09729s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 78.9997vw; opacity: 0.619287; animation: 2.90697s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 82.5675vw; opacity: 0.642298; animation: 3.20441s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 75.3683vw; opacity: 0.296866; animation: 3.63681s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 10.4729vw; opacity: 0.0713759; animation: 2.17419s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 90.0414vw; opacity: 0.143542; animation: 2.71886s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 31.853vw; opacity: 0.304831; animation: 3.30638s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 8.24265vw; opacity: 0.695855; animation: 2.78557s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 99.8193vw; opacity: 0.864145; animation: 4.20797s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 6.32182vw; opacity: 0.828853; animation: 3.78571s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 64.9804vw; opacity: 0.386797; animation: 2.83332s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 30.6374vw; opacity: 0.860401; animation: 3.36359s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 11.2824vw; opacity: 0.248698; animation: 4.86764s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 32.8773vw; opacity: 0.530081; animation: 4.83549s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 97.0598vw; opacity: 0.258414; animation: 3.50037s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 97.8239vw; opacity: 0.379871; animation: 2.84584s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 51.2813vw; opacity: 0.873127; animation: 4.57509s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 46.2727vw; opacity: 0.472845; animation: 4.82231s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 96.9885vw; opacity: 0.280205; animation: 3.87461s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 94.4064vw; opacity: 0.545946; animation: 4.84435s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 2.9732vw; opacity: 0.6074; animation: 3.42166s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 41.3941vw; opacity: 0.676167; animation: 3.44521s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 45.6444vw; opacity: 0.969151; animation: 3.54022s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 51.1389vw; opacity: 0.716216; animation: 4.54233s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 5.44922vw; opacity: 0.603103; animation: 3.22151s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 60.361vw; opacity: 0.614797; animation: 2.3337s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 74.9271vw; opacity: 0.580648; animation: 3.22836s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 72.6939vw; opacity: 0.678895; animation: 3.16076s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 47.5674vw; opacity: 0.305657; animation: 3.63054s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 85.5486vw; opacity: 0.0367958; animation: 2.98264s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 9.06446vw; opacity: 0.266464; animation: 4.77164s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 31.3999vw; opacity: 0.237016; animation: 3.04998s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 74.2942vw; opacity: 0.576693; animation: 4.61622s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 19.5805vw; opacity: 0.621823; animation: 2.03845s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 38.0377vw; opacity: 0.888557; animation: 4.10428s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 79.8398vw; opacity: 0.022629; animation: 2.94542s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 40.4978vw; opacity: 0.785184; animation: 3.12256s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 49.1687vw; opacity: 0.338234; animation: 2.56862s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 70.7673vw; opacity: 0.879418; animation: 2.77063s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 77.552vw; opacity: 0.82412; animation: 2.57847s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 34.6547vw; opacity: 0.465941; animation: 3.31404s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 23.1339vw; opacity: 0.363503; animation: 2.28023s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 29.8824vw; opacity: 0.711222; animation: 4.01734s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 85.8908vw; opacity: 0.106911; animation: 4.04866s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 92.544vw; opacity: 0.541765; animation: 2.16416s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 52.742vw; opacity: 0.955649; animation: 4.91555s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 85.0361vw; opacity: 0.882477; animation: 3.25183s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 59.6893vw; opacity: 0.63188; animation: 4.90301s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 94.1599vw; opacity: 0.933258; animation: 2.50349s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 50.0979vw; opacity: 0.568841; animation: 2.88924s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 40.649vw; opacity: 0.854331; animation: 2.83789s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 81.7055vw; opacity: 0.830661; animation: 3.85998s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 58.2417vw; opacity: 0.486189; animation: 3.61278s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 35.7701vw; opacity: 0.704621; animation: 2.65739s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 11.5979vw; opacity: 0.338119; animation: 4.83958s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 51.0163vw; opacity: 0.960074; animation: 3.04701s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 4.28592vw; opacity: 0.000463167; animation: 4.64302s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 53.3774vw; opacity: 0.182517; animation: 2.90943s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 35.422vw; opacity: 0.68435; animation: 2.54106s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 40.4558vw; opacity: 0.991843; animation: 2.84761s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 42.7968vw; opacity: 0.681346; animation: 2.79873s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 46.808vw; opacity: 0.354953; animation: 2.54558s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 17.1066vw; opacity: 0.4337; animation: 2.09714s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 0.257545vw; opacity: 0.699149; animation: 2.63371s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 90.764vw; opacity: 0.566455; animation: 4.32216s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 10.4207vw; opacity: 0.0558672; animation: 3.55355s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 68.7119vw; opacity: 0.640927; animation: 4.82349s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 57.3606vw; opacity: 0.704082; animation: 2.30316s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 78.7824vw; opacity: 0.651686; animation: 3.97891s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 94.363vw; opacity: 0.82393; animation: 3.01928s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 54.9992vw; opacity: 0.196981; animation: 2.68773s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 43.6163vw; opacity: 0.225827; animation: 4.40016s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 51.2989vw; opacity: 0.740452; animation: 4.97707s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 41.9782vw; opacity: 0.5008; animation: 4.96035s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 83.1319vw; opacity: 0.681734; animation: 4.16283s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 25.896vw; opacity: 0.11582; animation: 4.54684s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 79.8629vw; opacity: 0.507628; animation: 4.60929s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 66.5081vw; opacity: 0.608667; animation: 3.09242s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 66.2226vw; opacity: 0.724759; animation: 4.56134s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 74.1346vw; opacity: 0.836309; animation: 2.41791s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 27.7958vw; opacity: 0.604926; animation: 2.51638s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 14.5178vw; opacity: 0.000270967; animation: 4.44706s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 97.8171vw; opacity: 0.151723; animation: 4.78457s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 19.2973vw; opacity: 0.734878; animation: 4.18449s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 35.8445vw; opacity: 0.958193; animation: 4.41938s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 66.7042vw; opacity: 0.851701; animation: 2.41095s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 48.6286vw; opacity: 0.979707; animation: 4.97484s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 9.95925vw; opacity: 0.872719; animation: 2.82503s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 20.6524vw; opacity: 0.0626683; animation: 2.09426s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 35.4782vw; opacity: 0.903775; animation: 3.66735s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 25.5986vw; opacity: 0.303024; animation: 2.6511s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 88.7165vw; opacity: 0.959322; animation: 2.27856s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 69.191vw; opacity: 0.316057; animation: 2.59701s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 80.9273vw; opacity: 0.331285; animation: 4.57151s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 63.8758vw; opacity: 0.408087; animation: 4.89642s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 87.6131vw; opacity: 0.326443; animation: 3.34771s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 51.5476vw; opacity: 0.416184; animation: 4.63367s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 88.618vw; opacity: 0.704801; animation: 4.10714s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 29.2041vw; opacity: 0.777869; animation: 4.22859s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 95.0575vw; opacity: 0.263796; animation: 4.44966s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 71.9568vw; opacity: 0.503199; animation: 4.94561s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 30.4039vw; opacity: 0.692209; animation: 2.71391s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 85.1075vw; opacity: 0.880791; animation: 4.92567s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 91.7331vw; opacity: 0.687978; animation: 3.78362s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 38.9318vw; opacity: 0.907822; animation: 4.08251s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 77.3877vw; opacity: 0.912928; animation: 2.28635s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 87.0142vw; opacity: 0.94493; animation: 2.05325s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 54.6577vw; opacity: 0.51736; animation: 2.2948s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 41.5915vw; opacity: 0.984488; animation: 4.42427s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 52.0096vw; opacity: 0.810375; animation: 4.80372s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 78.5076vw; opacity: 0.982702; animation: 3.63488s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 10.3462vw; opacity: 0.968654; animation: 2.57421s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 99.4663vw; opacity: 0.0798123; animation: 4.94344s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 46.6106vw; opacity: 0.726275; animation: 3.45377s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 83.1636vw; opacity: 0.503856; animation: 3.11796s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 19.2579vw; opacity: 0.0711277; animation: 2.54628s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 32.3897vw; opacity: 0.749316; animation: 3.06193s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 0.245567vw; opacity: 0.0653548; animation: 4.27733s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 26.4534vw; opacity: 0.510631; animation: 3.66323s linear 0s 1 normal none running fall;"></div><div class="snowflake" style="left: 77.8076vw; opacity: 0.443535; animation: 3.91662s linear 0s 1 normal none running fall;"></div></body></html>
